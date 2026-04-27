@@ -1,9 +1,16 @@
-function App() {
+import { ConfigProvider } from "antd";
+import ruRU from "antd/locale/ru_RU";
+import { antdTheme } from "./providers/antdTheme";
+import "./styles/index.css";
+
+const App: React.FC = () => {
   return (
     <>
-      <h1 className="text-6xl">Vite + React</h1>
+      <ConfigProvider locale={ruRU} theme={antdTheme}>
+        <div className="bg-success text-primary">APP</div>
+      </ConfigProvider>
     </>
   );
-}
+};
 
-export default App;
+export { App };
