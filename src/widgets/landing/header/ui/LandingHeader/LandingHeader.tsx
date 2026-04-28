@@ -2,26 +2,26 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import type { MenuProps } from "antd";
-import { Login3 } from "@solar-icons/react-perf/Linear";
+import { Login3 } from "@solar-icons/react-perf/Outline";
 
-import { SetRegistrationView } from "~features/shared/locale";
-import { RoutesUrls } from "~shared/lib/router";
-import { Menu, Button } from "~shared/ui";
-import { Header, SiteLogo } from "~shared/ui";
+import { SetLocaleView } from "~features/shared/locale";
+import { RoutesUrls } from "~shared/lib/router/types";
+import { Menu, Button } from "antd";
+import { Header } from "~shared/ui/layout";
 
-export interface SiteHeaderProps extends Partial<ComponentWithChild> {}
+export interface LandingHeader extends Partial<ComponentWithChild> {}
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-export const SiteHeader: React.FC<SiteHeaderProps> = () => {
+export const LandingHeader: React.FC<LandingHeaderProps> = () => {
   const { t } = useTranslation();
   const { pathname } = useLocation();
 
   const navLinks = [
-    { key: RoutesUrls.root, label: t("routes.main") },
-    { key: RoutesUrls.statistics, label: t("routes.statistics") },
-    { key: RoutesUrls.aboutProject, label: t("routes.aboutProject") },
-    { key: RoutesUrls.registration, label: t("routes.registration") },
+    { key: RoutesUrls.home, label: t("routes.main") },
+    { key: RoutesUrls.home, label: t("routes.statistics") },
+    { key: RoutesUrls.home, label: t("routes.aboutProject") },
+    { key: RoutesUrls.home, label: t("routes.registration") },
   ];
 
   const items: MenuItem[] = navLinks.map((link) => ({
@@ -31,16 +31,16 @@ export const SiteHeader: React.FC<SiteHeaderProps> = () => {
 
   const selectedKey =
     navLinks.find((link) =>
-      link.key === RoutesUrls.root
-        ? pathname === RoutesUrls.root
+      link.key === RoutesUrls.home
+        ? pathname === RoutesUrls.home
         : pathname.startsWith(link.key),
     )?.key ?? null;
-  const isLoginPage = pathname.startsWith(RoutesUrls.login);
+  const isLoginPage = pathname.startsWith(RoutesUrls.home);
 
   return (
     <Header className="bg-white border-b">
       <div className="container h-16 flex justify-between items-center">
-        <SiteLogo />
+        {/* <SiteLogo /> */}
         <div className="flex items-center gap-3">
           <Menu
             selectedKeys={selectedKey ? [selectedKey] : []}
@@ -50,13 +50,13 @@ export const SiteHeader: React.FC<SiteHeaderProps> = () => {
             className="flex h-16 pt-2 border-0 overflow-visible"
           />
           {!isLoginPage && (
-            <Link to={RoutesUrls.login}>
+            <Link to={RoutesUrls.home}>
               <Button type="primary" icon={<Login3 />}>
                 {t("routes.login")}
               </Button>
             </Link>
           )}
-          <SetRegistrationView />
+          <SetLocaleView />
         </div>
       </div>
     </Header>

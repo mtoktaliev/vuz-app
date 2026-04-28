@@ -12,6 +12,7 @@
   "dependencies": {
     "@solar-icons/react-perf": "^2.1.0",
     "antd": "^6.3.7",
+    "classnames": "^2.5.1",
     "compose-function": "^3.0.3",
     "i18next": "^26.0.8",
     "i18next-browser-languagedetector": "^8.2.1",
