@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 // import { SiteFooter } from "~widgets/shared/site-footer";
-import { LandingHeader } from "~widgets/landing/header";
+import { LandingHeader } from "~widgets/landing/landing-header";
 
 // export interface SiteLayoutProps extends Partial<ComponentWithChildren> {}
 

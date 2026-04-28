@@ -1,13 +1,11 @@
 import { Button } from "antd";
 import { useTranslation } from "~shared/lib/i18n";
 import heroImage from "~shared/assets/heroImg.svg";
-import { SetLocaleView } from "~features/shared/locale";
 
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
   return (
     <div className="bg-slate-100">
-      <SetLocaleView />
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-12 py-32">
           <div className="col-span-8 col-start-3 text-center flex flex-col gap-6">

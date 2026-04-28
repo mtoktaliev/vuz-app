@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import type { MenuProps } from "antd";
 import { Login3 } from "@solar-icons/react-perf/Outline";
+import { SquareAcademicCap } from "@solar-icons/react-perf/Bold";
 
 import { SetLocaleView } from "~features/shared/locale";
 import { RoutesUrls } from "~shared/lib/router/types";
@@ -18,10 +19,8 @@ export const LandingHeader: React.FC<LandingHeaderProps> = () => {
   const { pathname } = useLocation();
 
   const navLinks = [
-    { key: RoutesUrls.home, label: t("routes.main") },
-    { key: RoutesUrls.home, label: t("routes.statistics") },
-    { key: RoutesUrls.home, label: t("routes.aboutProject") },
-    { key: RoutesUrls.home, label: t("routes.registration") },
+    { key: RoutesUrls.home, label: t("routes.home") },
+    { key: RoutesUrls.universities, label: t("routes.universities") },
   ];
 
   const items: MenuItem[] = navLinks.map((link) => ({
@@ -38,16 +37,16 @@ export const LandingHeader: React.FC<LandingHeaderProps> = () => {
   const isLoginPage = pathname.startsWith(RoutesUrls.home);
 
   return (
-    <Header className="bg-white border-b">
-      <div className="container h-16 flex justify-between items-center">
-        {/* <SiteLogo /> */}
+    <Header className="bg-white border-b border-gray-200">
+      <div className="container mx-auto flex justify-between items-center">
+        <SquareAcademicCap size={24} color="#000" />
         <div className="flex items-center gap-3">
           <Menu
             selectedKeys={selectedKey ? [selectedKey] : []}
             mode="horizontal"
             items={items}
             disabledOverflow
-            className="flex h-16 pt-2 border-0 overflow-visible"
+            className="flex border-0 overflow-visible"
           />
           {!isLoginPage && (
             <Link to={RoutesUrls.home}>

@@ -6,5 +6,9 @@
     "ky": "Кыр",
     "logInAccount": "Войти в кабинет",
     "chooseUniversity": "Выбрать вуз"
+  },
+  "routes": {
+    "home": "Главная",
+    "universities": "Вузы"
   }
 }

@@ -6,5 +6,9 @@
     "ky": "Кыр",
     "logInAccount": "Кабинетке кирүү",
     "chooseUniversity": "Колледжди тандоо"
+  },
+  "routes": {
+    "home": "Башкы бет",
+    "universities": "ЖОЖдор"
   }
 }
