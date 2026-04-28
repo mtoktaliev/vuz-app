@@ -1,0 +1,47 @@
+import { DownOutlined } from "@ant-design/icons";
+import { Space } from "antd";
+import { Global } from "@solar-icons/react-perf/Outline";
+
+import { useTranslation } from "~shared/lib/i18n";
+import { dayjs } from "~shared/lib/time";
+import { Dropdown } from "antd";
+
+import { LocaleCodes } from "../../model";
+
+export const SetLocaleView: React.FC = () => {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language;
+
+  const handleLocaleChange = (payload: string | number) => {
+    i18n.changeLanguage(payload as string);
+    dayjs.locale(payload as string);
+  };
+
+  const items: { key: string; label: string }[] = [
+    {
+      key: LocaleCodes.RUSSIAN,
+      label: t("cm:buttons.ru"),
+    },
+    {
+      key: LocaleCodes.KYRGYZ,
+      label: t("cm:buttons.ky"),
+    },
+  ];
+
+  return (
+    <div className="text-sm text-primary hover:text-primaryHover active:text-primaryActive transition-color">
+      <Dropdown
+        menu={{ items, onClick: ({ key }) => handleLocaleChange(key) }}
+        trigger={["click"]}
+      >
+        <a href="/" onClick={(e) => e.preventDefault()}>
+          <Space>
+            <Global size={16} />
+            {lang === "ru" ? t("cm:buttons.ru") : t("cm:buttons.ky")}
+            <DownOutlined />
+          </Space>
+        </a>
+      </Dropdown>
+    </div>
+  );
+};

@@ -1,0 +1,10 @@
+{
+  "appName": "ЖОЖго тапшыруу",
+  "mainSiteName": "Бүтүрүүчү",
+  "buttons": {
+    "ru": "Рус",
+    "ky": "Кыр",
+    "logInAccount": "Кабинетке кирүү",
+    "chooseUniversity": "Колледжди тандоо"
+  }
+}

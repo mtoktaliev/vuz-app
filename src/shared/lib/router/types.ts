@@ -1,0 +1,3 @@
+export const RoutesUrls = {
+  home: `/`,
+};

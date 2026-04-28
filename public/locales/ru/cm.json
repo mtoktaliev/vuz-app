@@ -1,0 +1,10 @@
+{
+  "appName": "Поступление в вузы",
+  "mainSiteName": "Абитуриент",
+  "buttons": {
+    "ru": "Рус",
+    "ky": "Кыр",
+    "logInAccount": "Войти в кабинет",
+    "chooseUniversity": "Выбрать вуз"
+  }
+}
