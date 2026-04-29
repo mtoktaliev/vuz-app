@@ -5,13 +5,16 @@ import { antdTheme } from "./providers/antdTheme";
 import "./styles/index.css";
 import { Router } from "~pages/Router";
 import { withProviders } from "./providers";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
 const App: React.FC = () => {
   return (
     <>
-      <ConfigProvider locale={ruRU} theme={antdTheme}>
-        <Router />
-      </ConfigProvider>
+      <ThemeProvider>
+        <ConfigProvider locale={ruRU} theme={antdTheme}>
+          <Router />
+        </ConfigProvider>
+      </ThemeProvider>
     </>
   );
 };
