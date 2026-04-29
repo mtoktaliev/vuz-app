@@ -10,6 +10,8 @@
   },
   "routes": {
     "home": "Главная",
-    "universities": "Вузы"
+    "universities": "Вузы",
+    "openData": "Открытые данные",
+    "faq": "Вопросы/ответы"
   }
 }

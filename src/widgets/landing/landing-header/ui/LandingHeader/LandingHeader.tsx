@@ -10,15 +10,15 @@ import { Button } from "antd";
 import { Header } from "~shared/ui/layout";
 import { ThemeSwitcher } from "~features/shared/theme-switcher";
 
-export interface LandingHeader extends Partial<ComponentWithChild> {}
-
-export const LandingHeader: React.FC<LandingHeaderProps> = () => {
+export const LandingHeader: React.FC = () => {
   const { t } = useTranslation();
   const { pathname } = useLocation();
 
   const navLinks = [
     { key: RoutesUrls.home, label: t("routes.home") },
     { key: RoutesUrls.universities, label: t("routes.universities") },
+    { key: RoutesUrls.openData, label: t("routes.openData") },
+    { key: RoutesUrls.faq, label: t("routes.faq") },
   ];
 
   const selectedKey =
@@ -31,10 +31,16 @@ export const LandingHeader: React.FC<LandingHeaderProps> = () => {
 
   return (
     <Header className="container mx-auto px-6 bg-white/50 rounded-xl backdrop-blur dark:bg-slate-950/50">
-      <div className="flex justify-between items-center h-12">
-        <SquareAcademicCap size={24} color="#000" className="dark:text-white" />
+      <div className="grid grid-cols-12 items-center h-12 gap-6">
+        <div className="col-span-3">
+          <SquareAcademicCap
+            size={24}
+            color="#000"
+            className="dark:text-white"
+          />
+        </div>
 
-        <nav className="flex items-center gap-2">
+        <nav className="col-span-6 flex items-center justify-center gap-2 w-full">
           {navLinks.map((link) => {
             const isActive = selectedKey === link.key;
 
@@ -53,7 +59,7 @@ export const LandingHeader: React.FC<LandingHeaderProps> = () => {
             );
           })}
         </nav>
-        <div className="flex items-center gap-6">
+        <div className="col-span-3 flex items-center gap-6 w-full justify-end">
           {!isLoginPage && (
             <Link to={RoutesUrls.home}>
               <Button type="primary" icon={<Login3 />}>

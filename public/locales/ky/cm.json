@@ -10,6 +10,8 @@
   },
   "routes": {
     "home": "Башкы бет",
-    "universities": "ЖОЖдор"
+    "universities": "ЖОЖдор",
+    "openData": "Ачык маалыматтар",
+    "faq": "Суроо / жооптор"
   }
 }
