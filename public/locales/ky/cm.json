@@ -5,7 +5,8 @@
     "ru": "Рус",
     "ky": "Кыр",
     "logInAccount": "Кабинетке кирүү",
-    "chooseUniversity": "Колледжди тандоо"
+    "chooseUniversity": "Колледжди тандоо",
+    "login": "Кирүү"
   },
   "routes": {
     "home": "Башкы бет",

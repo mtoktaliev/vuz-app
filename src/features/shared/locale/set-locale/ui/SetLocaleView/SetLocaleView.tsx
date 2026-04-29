@@ -29,7 +29,7 @@ export const SetLocaleView: React.FC = () => {
   ];
 
   return (
-    <div className="text-sm text-primary hover:text-primaryHover active:text-primaryActive transition-color">
+    <div className="text-sm transition-all text-slate-600 dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300">
       <Dropdown
         menu={{ items, onClick: ({ key }) => handleLocaleChange(key) }}
         trigger={["click"]}

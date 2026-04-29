@@ -7,4 +7,9 @@ export const antdTheme: ThemeConfig = {
     colorInfo: COLORS.primary,
     colorSuccess: COLORS.success,
   },
+  components: {
+    Button: {
+      borderRadius: 10,
+    },
+  },
 };

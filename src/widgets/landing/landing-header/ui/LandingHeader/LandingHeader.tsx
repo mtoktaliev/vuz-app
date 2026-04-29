@@ -44,8 +44,8 @@ export const LandingHeader: React.FC<LandingHeaderProps> = () => {
                 to={link.key}
                 className={`px-3 text-sm transition-colors ${
                   isActive
-                    ? "text-black dark:text-white"
-                    : "text-gray-600 dark:text-gray-400 hover: hover:text-gray-500 dark:hover:text-gray-300"
+                    ? "dark:text-white"
+                    : "text-slate-600 dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
                 }`}
               >
                 {link.label}
@@ -53,16 +53,18 @@ export const LandingHeader: React.FC<LandingHeaderProps> = () => {
             );
           })}
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-6">
           {!isLoginPage && (
             <Link to={RoutesUrls.home}>
               <Button type="primary" icon={<Login3 />}>
-                {t("routes.login")}
+                {t("cm:buttons.login")}
               </Button>
             </Link>
           )}
-          <ThemeSwitcher />
-          <SetLocaleView />
+          <div className="flex items-center gap-3">
+            <ThemeSwitcher />
+            <SetLocaleView />
+          </div>
         </div>
       </div>
     </Header>
