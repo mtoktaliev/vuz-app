@@ -1,5 +1,5 @@
 import { DownOutlined } from "@ant-design/icons";
-import { Space } from "antd";
+import { Button, Space } from "antd";
 import { Global } from "@solar-icons/react-perf/Outline";
 
 import { useTranslation } from "~shared/lib/i18n";
@@ -36,9 +36,7 @@ export const SetLocaleView: React.FC = () => {
       >
         <a href="/" onClick={(e) => e.preventDefault()}>
           <Space>
-            <Global size={16} />
-            {lang === "ru" ? t("cm:buttons.ru") : t("cm:buttons.ky")}
-            <DownOutlined />
+            <Button icon={<Global />} shape="circle" type="text" />
           </Space>
         </a>
       </Dropdown>

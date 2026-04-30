@@ -28,18 +28,16 @@ export const LandingHeader: React.FC = () => {
         ? pathname === RoutesUrls.home
         : pathname.startsWith(link.key),
     )?.key ?? null;
-  const isLoginPage = pathname.startsWith(RoutesUrls.universities);
+  const isLoginPage = pathname.startsWith(RoutesUrls.login);
 
   return (
-    <Header className="container mx-auto px-6 bg-white/50 rounded-xl backdrop-blur dark:bg-slate-950/50">
+    <Header className="container mx-auto px-3 bg-white/50 rounded-xl backdrop-blur dark:bg-slate-950/50">
       <div className="grid grid-cols-12 items-center h-12 gap-6">
         <div className="col-span-3">
           <Link to={RoutesUrls.home}>
-            <SquareAcademicCap
-              size={24}
-              color="#000"
-              className="text-slate-900 hover:text-slate-600 dark:text-slate-300 dark:hover:text-white transition-colors"
-            />
+            <Button icon={<SquareAcademicCap />} color="default" variant="link">
+              Абитуриент v2.0
+            </Button>
           </Link>
         </div>
 
@@ -48,32 +46,22 @@ export const LandingHeader: React.FC = () => {
             const isActive = selectedKey === link.key;
 
             return (
-              <Link
-                key={link.key}
-                to={link.key}
-                className={`px-3 text-sm transition-colors ${
-                  isActive
-                    ? "dark:text-white"
-                    : "text-slate-600 dark:text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
-                }`}
-              >
-                {link.label}
+              <Link key={link.key} to={link.key}>
+                <Button color={isActive ? "default" : "default"} variant="link">
+                  {link.label}
+                </Button>
               </Link>
             );
           })}
         </nav>
-        <div className="col-span-3 flex items-center gap-6 w-full justify-end">
-          {!isLoginPage && (
-            <Link to={RoutesUrls.login}>
-              <Button type="primary" icon={<Login3 />}>
-                {t("cm:buttons.login")}
-              </Button>
-            </Link>
-          )}
-          <div className="flex items-center gap-3">
-            <ThemeSwitcher />
-            <SetLocaleView />
-          </div>
+        <div className="col-span-3 flex items-center gap-1 w-full justify-end">
+          <Link to={RoutesUrls.login}>
+            <Button color="default" variant="link" icon={<Login3 />}>
+              {t("cm:buttons.login")}
+            </Button>
+          </Link>
+          <SetLocaleView />
+          <ThemeSwitcher />
         </div>
       </div>
     </Header>
