@@ -6,6 +6,8 @@ import {
   UniversitiesPages,
   OpenDataPages,
   FaqPages,
+  RegistrationPage,
+  LoginPage,
 } from "~pages/landing";
 import { LandingLayout } from "~pages/layouts/LandingLayout";
 
@@ -18,6 +20,8 @@ const routes = [
       { path: RoutesUrls.universities, element: <UniversitiesPages /> },
       { path: RoutesUrls.openData, element: <OpenDataPages /> },
       { path: RoutesUrls.faq, element: <FaqPages /> },
+      { path: RoutesUrls.registration, element: <RegistrationPage /> },
+      { path: RoutesUrls.login, element: <LoginPage /> },
     ],
   },
 ];

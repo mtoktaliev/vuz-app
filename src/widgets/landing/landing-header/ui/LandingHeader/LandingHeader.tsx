@@ -19,6 +19,7 @@ export const LandingHeader: React.FC = () => {
     { key: RoutesUrls.universities, label: t("routes.universities") },
     { key: RoutesUrls.openData, label: t("routes.openData") },
     { key: RoutesUrls.faq, label: t("routes.faq") },
+    { key: RoutesUrls.registration, label: t("routes.registration") },
   ];
 
   const selectedKey =
@@ -33,11 +34,13 @@ export const LandingHeader: React.FC = () => {
     <Header className="container mx-auto px-6 bg-white/50 rounded-xl backdrop-blur dark:bg-slate-950/50">
       <div className="grid grid-cols-12 items-center h-12 gap-6">
         <div className="col-span-3">
-          <SquareAcademicCap
-            size={24}
-            color="#000"
-            className="dark:text-white"
-          />
+          <Link to={RoutesUrls.home}>
+            <SquareAcademicCap
+              size={24}
+              color="#000"
+              className="text-slate-900 hover:text-slate-600 dark:text-slate-300 dark:hover:text-white transition-colors"
+            />
+          </Link>
         </div>
 
         <nav className="col-span-6 flex items-center justify-center gap-2 w-full">
@@ -61,7 +64,7 @@ export const LandingHeader: React.FC = () => {
         </nav>
         <div className="col-span-3 flex items-center gap-6 w-full justify-end">
           {!isLoginPage && (
-            <Link to={RoutesUrls.home}>
+            <Link to={RoutesUrls.login}>
               <Button type="primary" icon={<Login3 />}>
                 {t("cm:buttons.login")}
               </Button>

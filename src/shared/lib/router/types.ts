@@ -3,4 +3,6 @@ export const RoutesUrls = {
   universities: `/universities`,
   openData: `/open-data`,
   faq: `/faq`,
+  registration: `/registration`,
+  login: `/login`,
 };

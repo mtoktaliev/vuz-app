@@ -4,6 +4,7 @@ import heroImage from "~shared/assets/heroImg.svg";
 import heroImageWhite from "~shared/assets/heroImgWhite.svg";
 import { useTheme } from "~shared/lib/theme";
 import BlurText from "~features/shared/blur-text/BlurText";
+import ShinyText from "~features/shared/shiny-text/ShinyText";
 
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -16,6 +17,20 @@ export const Hero: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-12 py-32">
           <div className="col-span-8 col-start-3 text-center flex flex-col gap-6">
+            <div className="bg-white py-1 px-4 w-fit mx-auto rounded-full dark:bg-slate-800">
+              <ShinyText
+                text="✨ 2020.edu.gov.kg/vuz v2.0"
+                speed={2}
+                delay={3}
+                color="#62748e"
+                shineColor="#F7941D"
+                spread={120}
+                direction="left"
+                yoyo={false}
+                pauseOnHover={false}
+                disabled={false}
+              />
+            </div>
             <BlurText
               text={t("landing:heroTitle")}
               delay={200}
