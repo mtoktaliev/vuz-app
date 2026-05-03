@@ -1,4 +1,3 @@
-import { DownOutlined } from "@ant-design/icons";
 import { Button, Space } from "antd";
 import { Global } from "@solar-icons/react-perf/Outline";
 
@@ -10,7 +9,6 @@ import { LocaleCodes } from "../../model";
 
 export const SetLocaleView: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const lang = i18n.language;
 
   const handleLocaleChange = (payload: string | number) => {
     i18n.changeLanguage(payload as string);

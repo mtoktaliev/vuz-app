@@ -1,5 +1,6 @@
 import { Button } from "antd";
-import { MoonOutlined, SunOutlined } from "@ant-design/icons";
+import { SunOutlined } from "@ant-design/icons";
+import { MoonStars } from "@solar-icons/react-perf/Outline";
 import { useTheme } from "~shared/lib/theme";
 
 export const ThemeSwitcher = () => {
@@ -7,7 +8,7 @@ export const ThemeSwitcher = () => {
 
   return (
     <Button
-      icon={theme === "dark" ? <SunOutlined /> : <MoonOutlined />}
+      icon={theme === "dark" ? <SunOutlined /> : <MoonStars />}
       shape="circle"
       type="text"
       onClick={toggleTheme}

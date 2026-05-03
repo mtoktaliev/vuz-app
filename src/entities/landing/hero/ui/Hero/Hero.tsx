@@ -5,6 +5,8 @@ import heroImageWhite from "~shared/assets/heroImgWhite.svg";
 import { useTheme } from "~shared/lib/theme";
 import BlurText from "~features/shared/blur-text/BlurText";
 import ShinyText from "~features/shared/shiny-text/ShinyText";
+import { RoutesUrls } from "~shared/lib/router/types";
+import { Link } from "react-router-dom";
 
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -15,11 +17,11 @@ export const Hero: React.FC = () => {
   return (
     <>
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-12 py-32">
+        <div className="grid grid-cols-12 pt-32">
           <div className="col-span-8 col-start-3 text-center flex flex-col gap-6">
             <div className="bg-white py-1 px-4 w-fit mx-auto rounded-full dark:bg-slate-800">
               <ShinyText
-                text="✨ 2020.edu.gov.kg/vuz v2.0"
+                text="⚡2020.edu.gov.kg/vuz v2.0"
                 speed={2}
                 delay={3}
                 color="#62748e"
@@ -43,23 +45,27 @@ export const Hero: React.FC = () => {
               {t("landing:heroDescription")}
             </p>
             <div className="flex justify-center gap-6">
-              <Button
-                type="primary"
-                size="large"
-                shape="round"
-                className="min-h-12 min-w-48"
-              >
-                {t("cm:buttons:logInAccount")}
-              </Button>
-              <Button
-                type="primary"
-                size="large"
-                shape="round"
-                ghost
-                className="min-h-12 min-w-48"
-              >
-                {t("cm:buttons:chooseUniversity")}
-              </Button>
+              <Link to={RoutesUrls.login}>
+                <Button
+                  type="primary"
+                  size="large"
+                  shape="round"
+                  style={{ padding: "24px 30px" }}
+                >
+                  {t("cm:buttons:logInAccount")}
+                </Button>
+              </Link>
+              <Link to={RoutesUrls.universities}>
+                <Button
+                  type="primary"
+                  size="large"
+                  ghost
+                  shape="round"
+                  style={{ padding: "24px 30px" }}
+                >
+                  {t("cm:buttons:chooseUniversity")}
+                </Button>
+              </Link>
             </div>
             <div className="flex justify-center">
               {theme === "dark" ? (

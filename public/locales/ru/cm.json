@@ -6,7 +6,8 @@
     "ky": "Кыр",
     "logInAccount": "Войти в кабинет",
     "chooseUniversity": "Выбрать вуз",
-    "login": "Войти"
+    "login": "Войти",
+    "watchVideo": "Смотреть видео"
   },
   "routes": {
     "home": "Главная",

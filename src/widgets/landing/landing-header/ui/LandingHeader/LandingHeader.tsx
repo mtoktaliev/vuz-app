@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Login3 } from "@solar-icons/react-perf/Outline";
 import { SquareAcademicCap } from "@solar-icons/react-perf/Bold";
 
@@ -12,7 +12,6 @@ import { ThemeSwitcher } from "~features/shared/theme-switcher";
 
 export const LandingHeader: React.FC = () => {
   const { t } = useTranslation();
-  const { pathname } = useLocation();
 
   const navLinks = [
     { key: RoutesUrls.home, label: t("routes.home") },
@@ -22,16 +21,8 @@ export const LandingHeader: React.FC = () => {
     { key: RoutesUrls.registration, label: t("routes.registration") },
   ];
 
-  const selectedKey =
-    navLinks.find((link) =>
-      link.key === RoutesUrls.home
-        ? pathname === RoutesUrls.home
-        : pathname.startsWith(link.key),
-    )?.key ?? null;
-  const isLoginPage = pathname.startsWith(RoutesUrls.login);
-
   return (
-    <Header className="container mx-auto px-3 bg-white/50 rounded-xl backdrop-blur dark:bg-slate-950/50">
+    <Header className="container mx-auto px-3 bg-white/50 rounded-xl backdrop-blur dark:bg-slate-950/50 border border-slate-200/50 dark:border-slate-800/50">
       <div className="grid grid-cols-12 items-center h-12 gap-6">
         <div className="col-span-3">
           <Link to={RoutesUrls.home}>
@@ -43,11 +34,9 @@ export const LandingHeader: React.FC = () => {
 
         <nav className="col-span-6 flex items-center justify-center gap-2 w-full">
           {navLinks.map((link) => {
-            const isActive = selectedKey === link.key;
-
             return (
               <Link key={link.key} to={link.key}>
-                <Button color={isActive ? "default" : "default"} variant="link">
+                <Button color="default" variant="link">
                   {link.label}
                 </Button>
               </Link>

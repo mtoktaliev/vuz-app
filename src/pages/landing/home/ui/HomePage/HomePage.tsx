@@ -1,9 +1,10 @@
-import { HeroSection } from "~widgets/landing/hero-section";
+import { HeroSection, HowToProceedSection } from "~widgets/landing";
 
 export const HomePage: React.FC = () => {
   return (
     <>
       <HeroSection />
+      <HowToProceedSection />
     </>
   );
 };
