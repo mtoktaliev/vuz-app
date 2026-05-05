@@ -8,6 +8,7 @@ import {
   FaqPages,
   RegistrationPage,
   LoginPage,
+  HelpMeChoosePage,
 } from "~pages/landing";
 import { LandingLayout } from "~pages/layouts/LandingLayout";
 
@@ -22,6 +23,7 @@ const routes = [
       { path: RoutesUrls.faq, element: <FaqPages /> },
       { path: RoutesUrls.registration, element: <RegistrationPage /> },
       { path: RoutesUrls.login, element: <LoginPage /> },
+      { path: RoutesUrls.helpMeChoose, element: <HelpMeChoosePage /> },
     ],
   },
 ];

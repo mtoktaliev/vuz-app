@@ -12,6 +12,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
+import { RoutesUrls } from "~shared/lib/router/types";
 
 export const PopularDestinations: React.FC = () => {
   const { t } = useTranslation();
@@ -22,10 +24,20 @@ export const PopularDestinations: React.FC = () => {
   return (
     <>
       <div className="container mx-auto px-6 flex flex-col gap-6 py-20">
-        <div className=" flex gap-6">
+        <div className="flex gap-6 justify-between items-center">
           <h2 className="text-4xl font-semibold dark:text-white">
             Самые популярные направления
           </h2>
+          <Link to={RoutesUrls.helpMeChoose}>
+            <Button
+              type="link"
+              size="large"
+              icon={<AltArrowRight />}
+              iconPlacement="end"
+            >
+              Помошь с выбором
+            </Button>
+          </Link>
         </div>
         <Swiper
           slidesPerView={3}
