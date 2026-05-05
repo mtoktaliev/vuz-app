@@ -2,6 +2,7 @@ import { Button } from "antd";
 import { useTranslation } from "~shared/lib/i18n";
 import smartphone from "~shared/assets/smartphone.png";
 import { useTheme } from "~shared/lib/theme";
+import { VideoPlayer } from "~features/shared/video-player";
 
 export const HowToProceed: React.FC = () => {
   const { t } = useTranslation();
@@ -9,10 +10,10 @@ export const HowToProceed: React.FC = () => {
 
   return (
     <div className="bg-white dark:bg-slate-950">
-      <div className="container mx-auto px-6 flex flex-col gap-6 py-32">
+      <div className="container mx-auto px-6 flex flex-col gap-6 py-20">
         <div className="grid grid-cols-12">
           <div className="col-span-8 col-start-3 text-center flex flex-col gap-6">
-            <h2 className="text-4xl font-semibold dark:text-white text-center flex justify-center items-center">
+            <h2 className="text-5xl font-semibold dark:text-white text-center flex justify-center items-center">
               {t("landing:howToProceedTitle")}
             </h2>
             <p className="text-xl text-slate-500 dark:text-slate-400">
@@ -63,15 +64,22 @@ export const HowToProceed: React.FC = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <Button
-            type="primary"
-            size="large"
-            ghost
-            shape="round"
-            style={{ padding: "24px 30px" }}
-          >
-            {t("cm:buttons:watchVideo")}
-          </Button>
+          <VideoPlayer
+            video_id="DkvdY0VjlRI?si=SSjBXa23R-z0BT68"
+            video_title="Абитуриент v2.0"
+            actionSlot={(setOpen) => (
+              <Button
+                type="primary"
+                size="large"
+                ghost
+                shape="round"
+                style={{ padding: "24px 30px" }}
+                onClick={() => setOpen(true)}
+              >
+                {t("cm:buttons:watchVideo")}
+              </Button>
+            )}
+          />
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
   return (
     <>
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-12 pt-32">
+        <div className="grid grid-cols-12 py-20">
           <div className="col-span-8 col-start-3 text-center flex flex-col gap-6">
             <div className="bg-white py-1 px-4 w-fit mx-auto rounded-full dark:bg-slate-800">
               <ShinyText
