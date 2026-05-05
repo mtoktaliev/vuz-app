@@ -13,6 +13,7 @@
     "@gsap/react": "^2.1.2",
     "@solar-icons/react-perf": "^2.1.0",
     "antd": "^6.3.7",
+    "canvas-confetti": "^1.9.4",
     "classnames": "^2.5.1",
     "compose-function": "^3.0.3",
     "gsap": "^3.15.0",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.2.4",
+    "@types/canvas-confetti": "^1.9.0",
     "@types/compose-function": "^0.0.33",
     "@types/node": "^24.12.2",
     "@types/react": "^19.2.14",

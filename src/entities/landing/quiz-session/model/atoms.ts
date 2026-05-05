@@ -7,9 +7,14 @@ export const currentStepAtom = atom<number>(1);
 export const answersAtom = atom<Record<number, number>>({});
 export const quizStatusAtom = atom<QuizStatus>("in-progress");
 
-// derived — текущий ответ на шаге
 export const currentAnswerAtom = atom((get) => {
   const step = get(currentStepAtom);
   const answers = get(answersAtom);
   return answers[step - 1];
+});
+
+export const resetQuizAtom = atom(null, (_get, set) => {
+  set(currentStepAtom, 1);
+  set(answersAtom, {});
+  set(quizStatusAtom, "in-progress");
 });

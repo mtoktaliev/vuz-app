@@ -12,7 +12,7 @@ export const QuestionView = ({ question, currentStep, totalSteps }: Props) => {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-3">
-        <span className="text-sm text-slate-500">
+        <span className="text-sm text-slate-500 dark:text-slate-400">
           Вопрос {currentStep} / {totalSteps}
         </span>
         <h2 className="text-xl font-semibold dark:text-white">

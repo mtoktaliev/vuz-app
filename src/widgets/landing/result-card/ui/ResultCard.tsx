@@ -23,10 +23,12 @@ export const ResultCard = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto flex flex-col gap-6 px-4">
+    <div className="w-full mx-auto flex flex-col gap-6 px-4">
       <div className="flex flex-col gap-1">
-        <h2 className="text-2xl font-medium">Ваши направления</h2>
-        <p className="text-sm text-gray-500">
+        <h2 className="text-2xl font-semibold dark:text-white">
+          Ваши направления
+        </h2>
+        <p className="text-slate-500 dark:text-slate-400">
           На основе ваших ответов мы рекомендуем:
         </p>
       </div>
