@@ -1,17 +1,15 @@
+import { useAtomValue } from "jotai";
+import { answersAtom } from "~entities/landing/quiz-session";
+import { Progress } from "antd";
+
 interface Props {
-  current: number;
   total: number;
 }
 
-export const StepProgress = ({ current, total }: Props) => {
-  const percent = Math.round((current / total) * 100);
+export const StepProgress = ({ total }: Props) => {
+  const answers = useAtomValue(answersAtom);
+  const answered = Object.keys(answers).length;
+  const percent = Math.round((answered / total) * 100);
 
-  return (
-    <div className="w-full h-1 bg-gray-200 rounded-full">
-      <div
-        className="h-1 bg-violet-600 rounded-full transition-all duration-400"
-        style={{ width: `${percent}%` }}
-      />
-    </div>
-  );
+  return <Progress percent={percent} showInfo={false} size="small" />;
 };

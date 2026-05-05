@@ -1,4 +1,3 @@
-// widgets/quiz-stepper/ui/QuizStepper.tsx
 import { useAtomValue } from "jotai";
 import { currentStepAtom } from "~entities/landing/quiz-session";
 import { useQuestions } from "~entities/landing/question";
@@ -12,8 +11,8 @@ export const QuizStepper = () => {
   const question = questions[currentStep - 1];
 
   return (
-    <div className="w-full max-w-2xl mx-auto flex flex-col gap-8 px-4">
-      <StepProgress current={currentStep} total={questions.length} />
+    <div className="flex flex-col gap-6">
+      <StepProgress total={questions.length} />
       <QuestionView
         question={question}
         currentStep={currentStep}

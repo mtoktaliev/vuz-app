@@ -1,4 +1,4 @@
-// widgets/result-card/ui/ResultCard.tsx
+import { Restart } from "@solar-icons/react-perf/Outline";
 import { useAtomValue, useSetAtom } from "jotai";
 import {
   answersAtom,
@@ -7,16 +7,19 @@ import {
 } from "~entities/landing/quiz-session";
 import { useCalculateResult } from "~features/shared/calculate-result";
 import { DirectionCard } from "./DirectionCard";
+import { Button } from "antd";
 
 export const ResultCard = () => {
   const answers = useAtomValue(answersAtom);
   const setStatus = useSetAtom(quizStatusAtom);
   const setStep = useSetAtom(currentStepAtom);
   const { topDirections } = useCalculateResult(answers);
+  const setAnswers = useSetAtom(answersAtom);
 
   const handleReset = () => {
     setStatus("in-progress");
     setStep(1);
+    setAnswers({});
   };
 
   return (
@@ -37,14 +40,17 @@ export const ResultCard = () => {
           />
         ))}
       </div>
-
-      <button
-        onClick={handleReset}
-        className="self-start text-sm text-gray-500 border border-gray-200 
-                   px-5 py-2.5 rounded-xl hover:bg-gray-50 transition-all"
-      >
-        ← Пройти заново
-      </button>
+      <div>
+        <Button
+          onClick={handleReset}
+          size="large"
+          icon={<Restart />}
+          shape="round"
+          style={{ padding: "24px 30px" }}
+        >
+          Пройти заново
+        </Button>
+      </div>
     </div>
   );
 };
