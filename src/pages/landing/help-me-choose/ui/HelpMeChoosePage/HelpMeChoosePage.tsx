@@ -1,11 +1,17 @@
 import { useEffect } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
-import { quizStatusAtom, resetQuizAtom } from "~entities/landing/quiz-session";
+import {
+  quizStatusAtom,
+  resetQuizAtom,
+  isTransitioningAtom,
+} from "~entities/landing/quiz-session";
 import { QuizStepper } from "~widgets/landing";
 import { ResultCard } from "~widgets/landing";
+import { AiLoader } from "~widgets/landing/result-card/ui/AiLoader";
 
 export const HelpMeChoosePage = () => {
   const status = useAtomValue(quizStatusAtom);
+  const isTransitioning = useAtomValue(isTransitioningAtom);
   const resetQuiz = useSetAtom(resetQuizAtom);
 
   useEffect(() => {
@@ -13,6 +19,16 @@ export const HelpMeChoosePage = () => {
       resetQuiz();
     };
   }, [resetQuiz]);
+
+  {
+    if (isTransitioning && status !== "finished") {
+      return (
+        <main className="min-h-screen flex items-center justify-center">
+          <AiLoader />
+        </main>
+      );
+    }
+  }
 
   return (
     <>
