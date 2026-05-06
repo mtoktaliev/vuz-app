@@ -1,7 +1,7 @@
-// entities/question/model/types.ts
+import type { ReactNode } from "react";
 
 export interface QuestionOption {
-  icon: string;
+  icon: ReactNode;
   label: string;
   scores: Record<string, number>; // { it: 3, econ: 2, law: 0, med: 0 }
 }

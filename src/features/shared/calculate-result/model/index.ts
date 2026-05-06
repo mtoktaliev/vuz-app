@@ -1,4 +1,3 @@
-// features/calculate-result/model/index.ts
 import { QUESTIONS } from "~shared/config/questions";
 import { DIRECTIONS } from "~shared/config/directions";
 import type { Direction } from "~entities/landing/direction";

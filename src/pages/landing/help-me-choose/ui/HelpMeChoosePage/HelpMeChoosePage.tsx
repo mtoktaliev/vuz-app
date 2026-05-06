@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
 import { quizStatusAtom, resetQuizAtom } from "~entities/landing/quiz-session";
-import { QuizStepper } from "~widgets/landing/quiz-stepper";
+import { QuizStepper } from "~widgets/landing";
 import { ResultCard } from "~widgets/landing";
 
 export const HelpMeChoosePage = () => {

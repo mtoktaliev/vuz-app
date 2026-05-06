@@ -1,4 +1,3 @@
-// shared/config/directions.ts
 import type { Direction } from "~entities/landing/direction";
 
 export const DIRECTIONS: Direction[] = [

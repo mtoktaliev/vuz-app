@@ -7,6 +7,7 @@ import path from "path";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
+    extensions: [".tsx", ".ts", ".jsx", ".js"],
     alias: {
       "~app": path.resolve(__dirname, "./src/app"),
       "~entities": path.resolve(__dirname, "./src/entities"),
