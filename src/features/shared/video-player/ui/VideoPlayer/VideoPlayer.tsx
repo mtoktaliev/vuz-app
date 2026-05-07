@@ -24,7 +24,7 @@ export const VideoPlayer: React.FC<IVideoPlayerProps> = ({
         footer={null}
         width={860}
         centered
-        destroyOnClose
+        destroyOnHidden
         styles={{
           body: { padding: 0 },
           wrapper: { padding: 0, overflow: "hidden", borderRadius: 16 },

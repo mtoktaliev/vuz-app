@@ -1,11 +1,11 @@
 import { useAtomValue } from "jotai";
 import { currentAnswerAtom } from "~entities/landing/quiz-session";
 import { useSelectAnswer } from "../model";
-import type { QuestionOption } from "~entities/landing/question";
+import type { IQuestionOption } from "~entities/landing/question";
 import { Button } from "antd";
 
 interface Props {
-  option: QuestionOption;
+  option: IQuestionOption;
   index: number;
 }
 

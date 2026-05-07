@@ -15,7 +15,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { RoutesUrls } from "~shared/lib/router/types";
 
-export const PopularDestinations: React.FC = () => {
+export const PopularDirectionsView: React.FC = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
   const navigationPrevRef = useRef<HTMLButtonElement>(null);

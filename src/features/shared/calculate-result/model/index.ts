@@ -1,13 +1,13 @@
 import { QUESTIONS } from "~shared/config/questions";
 import { DIRECTIONS } from "~shared/config/directions";
-import type { Direction } from "~entities/landing/direction";
+import type { IDirection } from "~entities/landing/direction";
 
 export const useCalculateResult = (answers: Record<number, number>) => {
   const topDirections = calculate(answers);
   return { topDirections };
 };
 
-const calculate = (answers: Record<number, number>): Direction[] => {
+const calculate = (answers: Record<number, number>): IDirection[] => {
   // 1. Считаем баллы по каждому направлению
   const scores: Record<string, number> = {};
 

@@ -1,1 +1,1 @@
-export { useCalculateResult } from "./model";
+export * from "./model";

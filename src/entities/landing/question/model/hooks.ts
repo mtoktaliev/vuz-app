@@ -1,11 +1,11 @@
 // entities/question/model/hooks.ts
 import { QUESTIONS } from "~shared/config/questions";
-import type { Question } from "./types";
+import type { IQuestion } from "./types";
 
 export const useQuestions = () => {
   return {
     questions: QUESTIONS,
     total: QUESTIONS.length,
-    getByIndex: (index: number): Question | undefined => QUESTIONS[index],
+    getByIndex: (index: number): IQuestion | undefined => QUESTIONS[index],
   };
 };

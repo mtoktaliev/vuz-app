@@ -6,7 +6,7 @@ import {
   currentStepAtom,
 } from "~entities/landing/quiz-session";
 import { useCalculateResult } from "~features/shared/calculate-result";
-import { DirectionCard } from "~entities/landing/direction/ui/DirectionCard";
+import { DirectionCardView } from "~entities/landing/direction";
 import { Button } from "antd";
 
 export const ResultCard = () => {
@@ -35,10 +35,11 @@ export const ResultCard = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {topDirections.map((direction, index) => (
-          <DirectionCard
+          <DirectionCardView
             key={direction.id}
             direction={direction}
             isPrimary={index === 0}
+            showBadge={true}
           />
         ))}
       </div>

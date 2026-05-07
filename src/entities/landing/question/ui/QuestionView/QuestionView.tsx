@@ -2,10 +2,10 @@ import { useAtomValue } from "jotai";
 import { isTransitioningAtom } from "~entities/landing/quiz-session";
 import { SelectAnswer } from "~features/shared/select-answer";
 import { NavigateQuestion } from "~features/shared/navigate-question";
-import type { Question } from "~entities/landing/question";
+import type { IQuestion } from "~entities/landing/question";
 
 interface Props {
-  question: Question;
+  question: IQuestion;
   currentStep: number;
   totalSteps: number;
 }

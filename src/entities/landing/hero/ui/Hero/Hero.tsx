@@ -11,14 +11,12 @@ import { Link } from "react-router-dom";
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
-  const handleAnimationComplete = () => {
-    console.log("Animation completed!");
-  };
+
   return (
     <>
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-12 py-20">
-          <div className="col-span-8 col-start-3 text-center flex flex-col gap-6">
+          <div className="col-span-8 col-start-3 text-center flex flex-col gap-12">
             <div className="bg-white py-1 px-4 w-fit mx-auto rounded-full dark:bg-slate-800">
               <ShinyText
                 text="⚡2020.edu.gov.kg/vuz v2.0"
@@ -33,17 +31,19 @@ export const Hero: React.FC = () => {
                 disabled={false}
               />
             </div>
-            <BlurText
-              text={t("landing:heroTitle")}
-              delay={200}
-              animateBy="words"
-              direction="top"
-              onAnimationComplete={handleAnimationComplete}
-              className="text-5xl font-semibold leading-tight dark:text-white text-center flex justify-center items-center"
-            />
-            <p className="text-2xl text-slate-500 dark:text-slate-400">
-              {t("landing:heroDescription")}
-            </p>
+            <div className="flex flex-col gap-6">
+              <BlurText
+                text={t("landing:heroTitle")}
+                delay={200}
+                animateBy="words"
+                direction="top"
+                // onAnimationComplete={handleAnimationComplete}
+                className="text-5xl font-semibold leading-tight dark:text-white text-center flex justify-center items-center"
+              />
+              <p className="text-2xl text-slate-500 dark:text-slate-400">
+                {t("landing:heroDescription")}
+              </p>
+            </div>
             <div className="flex justify-center gap-6">
               <Link to={RoutesUrls.login}>
                 <Button

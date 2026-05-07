@@ -15,7 +15,7 @@ export const HowToProceed: React.FC = () => {
 
   return (
     <>
-      <div className="container mx-auto px-6 flex flex-col gap-6 py-20">
+      <div className="container mx-auto px-6 flex flex-col gap-12 py-20">
         <div className="grid grid-cols-12">
           <div className="col-span-8 col-start-3 text-center flex flex-col gap-6">
             <h2 className="text-5xl font-semibold dark:text-white text-center flex justify-center items-center">

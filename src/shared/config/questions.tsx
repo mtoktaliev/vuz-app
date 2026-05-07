@@ -1,4 +1,4 @@
-import type { Question } from "~entities/landing/question";
+import type { IQuestion } from "~entities/landing/question";
 import {
   CalculatorMinimalistic,
   Laptop,
@@ -27,7 +27,7 @@ import {
   Target,
 } from "@solar-icons/react-perf/Outline";
 
-export const QUESTIONS: Question[] = [
+export const QUESTIONS: IQuestion[] = [
   {
     id: 1,
     text: "Какой предмет вам нравится больше всего?",

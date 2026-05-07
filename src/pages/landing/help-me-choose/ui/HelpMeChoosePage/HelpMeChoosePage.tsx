@@ -7,7 +7,7 @@ import {
 } from "~entities/landing/quiz-session";
 import { QuizStepper } from "~widgets/landing";
 import { ResultCard } from "~widgets/landing";
-import { AiLoader } from "~widgets/landing/result-card/ui/AiLoader";
+import { AiLoader } from "~shared/ui/AiLoader";
 
 export const HelpMeChoosePage = () => {
   const status = useAtomValue(quizStatusAtom);

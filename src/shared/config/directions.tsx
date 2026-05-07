@@ -1,7 +1,7 @@
 import { LaptopMinimalistic } from "@solar-icons/react-perf/Outline";
-import type { Direction } from "~entities/landing/direction";
+import type { IDirection } from "~entities/landing/direction";
 
-export const DIRECTIONS: Direction[] = [
+export const DIRECTIONS: IDirection[] = [
   {
     id: "it",
     icon: <LaptopMinimalistic size={20} />,

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export interface Direction {
+export interface IDirection {
   id: string;
   icon?: ReactNode;
   name: string;
