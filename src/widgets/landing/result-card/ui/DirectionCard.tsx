@@ -27,11 +27,18 @@ export const DirectionCard = ({ direction, isPrimary = false }: Props) => {
         {isPrimary ? "Лучшее совпадение" : "Также подходит"}
       </span>
 
-      <div className="flex flex-col gap-1">
-        <h3 className="text-base font-medium">{direction.name}</h3>
-        <p className="text-sm text-gray-500 leading-snug">
-          {direction.description}
-        </p>
+      <div className="flex flex-col gap-3">
+        <div className="text-primary bg-purple-100 dark:bg-slate-900 p-2 rounded-lg w-fit">
+          {direction.icon}
+        </div>
+        <div>
+          <h3 className="font-semibold text-lg dark:text-white">
+            {direction.name}
+          </h3>
+          <p className="text-slate-500 dark:text-slate-400">
+            {direction.description}
+          </p>
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-2">

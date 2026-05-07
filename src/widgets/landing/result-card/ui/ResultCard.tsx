@@ -6,7 +6,7 @@ import {
   currentStepAtom,
 } from "~entities/landing/quiz-session";
 import { useCalculateResult } from "~features/shared/calculate-result";
-import { DirectionCard } from "./DirectionCard";
+import { DirectionCard } from "~entities/landing/direction/ui/DirectionCard";
 import { Button } from "antd";
 
 export const ResultCard = () => {

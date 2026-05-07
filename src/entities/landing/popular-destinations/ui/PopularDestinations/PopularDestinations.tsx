@@ -95,7 +95,7 @@ export const PopularDestinations: React.FC = () => {
                 <h3 className="font-semibold text-lg dark:text-white">
                   Информационные технологии
                 </h3>
-                <p className="text-slate-500">
+                <p className="text-slate-500 dark:text-slate-400">
                   Программирование, кибербезопасность, AI
                 </p>
               </div>

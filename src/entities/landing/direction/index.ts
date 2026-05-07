@@ -1,2 +1,2 @@
-// entities/landing/direction/index.ts
-export type { Direction } from "./model/types";
+export * from "./model";
+export * from "./ui";
