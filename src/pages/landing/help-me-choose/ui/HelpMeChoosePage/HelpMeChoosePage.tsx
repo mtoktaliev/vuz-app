@@ -3,7 +3,7 @@ import { useAtomValue, useSetAtom } from "jotai";
 import {
   quizStatusAtom,
   resetQuizAtom,
-  isTransitioningAtom,
+  isLoadingResultAtom,
 } from "~entities/landing/quiz-session";
 import { QuizStepper } from "~widgets/landing";
 import { ResultCard } from "~widgets/landing";
@@ -11,24 +11,12 @@ import { AiLoader } from "~widgets/landing/result-card/ui/AiLoader";
 
 export const HelpMeChoosePage = () => {
   const status = useAtomValue(quizStatusAtom);
-  const isTransitioning = useAtomValue(isTransitioningAtom);
+  const isLoadingResult = useAtomValue(isLoadingResultAtom);
   const resetQuiz = useSetAtom(resetQuizAtom);
 
   useEffect(() => {
-    return () => {
-      resetQuiz();
-    };
+    return () => resetQuiz();
   }, [resetQuiz]);
-
-  {
-    if (isTransitioning && status !== "finished") {
-      return (
-        <main className="min-h-screen flex items-center justify-center">
-          <AiLoader />
-        </main>
-      );
-    }
-  }
 
   return (
     <>
@@ -43,7 +31,13 @@ export const HelpMeChoosePage = () => {
               подойдут именно вам
             </p>
             <div className="bg-white dark:bg-slate-950 p-12 rounded-3xl">
-              {status === "finished" ? <ResultCard /> : <QuizStepper />}
+              {isLoadingResult ? (
+                <AiLoader />
+              ) : status === "finished" ? (
+                <ResultCard />
+              ) : (
+                <QuizStepper />
+              )}
             </div>
           </div>
         </div>

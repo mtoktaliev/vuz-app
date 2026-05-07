@@ -24,6 +24,7 @@ export const SelectAnswer = ({ option, index }: Props) => {
         display: "flex",
         justifyContent: "flex-start",
         borderRadius: "16px",
+        width: "100%",
       }}
       icon={option.icon}
       iconPlacement="start"

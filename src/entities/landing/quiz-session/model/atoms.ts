@@ -17,6 +17,9 @@ export const resetQuizAtom = atom(null, (_get, set) => {
   set(currentStepAtom, 1);
   set(answersAtom, {});
   set(quizStatusAtom, "in-progress");
+  set(isLoadingResultAtom, false);
 });
 
 export const isTransitioningAtom = atom<boolean>(false);
+
+export const isLoadingResultAtom = atom<boolean>(false);

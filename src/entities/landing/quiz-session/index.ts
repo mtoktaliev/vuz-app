@@ -6,4 +6,5 @@ export {
   currentAnswerAtom,
   resetQuizAtom,
   isTransitioningAtom,
+  isLoadingResultAtom,
 } from "./model/atoms";

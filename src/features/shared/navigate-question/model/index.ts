@@ -4,6 +4,8 @@ import {
   currentStepAtom,
   quizStatusAtom,
   isTransitioningAtom,
+  isLoadingResultAtom,
+  answersAtom,
 } from "~entities/landing/quiz-session";
 import { useQuestions } from "~entities/landing/question";
 import confetti from "canvas-confetti";
@@ -12,6 +14,8 @@ export const useNavigateQuestion = () => {
   const [currentStep, setCurrentStep] = useAtom(currentStepAtom);
   const setStatus = useSetAtom(quizStatusAtom);
   const [isTransitioning, setIsTransitioning] = useAtom(isTransitioningAtom);
+  const setIsLoadingResult = useSetAtom(isLoadingResultAtom);
+  const [answers, setAnswers] = useAtom(answersAtom);
   const { total } = useQuestions();
 
   const fireConfetti = () => {
@@ -40,31 +44,36 @@ export const useNavigateQuestion = () => {
 
   const goNext = () => {
     if (isTransitioning) return;
-    setIsTransitioning(true);
 
     if (currentStep === total) {
-      // показываем лоадер — статус меняем через 2.5с
+      setIsLoadingResult(true);
       setTimeout(() => {
         setStatus("finished");
-        setIsTransitioning(false);
+        setIsLoadingResult(false);
         fireConfetti();
       }, 2500);
     } else {
-      // небольшая задержка → меняем шаг → снимаем transitioning
+      setIsTransitioning(true);
       setTimeout(() => {
         setCurrentStep((s) => s + 1);
-        setTimeout(() => setIsTransitioning(false), 50);
-      }, 400);
+        setIsTransitioning(false);
+      }, 150);
     }
   };
 
   const goBack = () => {
     if (isTransitioning) return;
+
+    // удаляем ответ текущего шага
+    const updated = { ...answers };
+    delete updated[currentStep - 1];
+    setAnswers(updated);
+
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentStep((s) => Math.max(1, s - 1));
-      setTimeout(() => setIsTransitioning(false), 50);
-    }, 400);
+      setIsTransitioning(false);
+    }, 150);
   };
 
   return {
