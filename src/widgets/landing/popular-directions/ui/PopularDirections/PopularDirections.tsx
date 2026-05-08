@@ -17,32 +17,75 @@ export const PopularDirections = () => {
   const navigationPrevRef = useRef<HTMLButtonElement>(null);
   const navigationNextRef = useRef<HTMLButtonElement>(null);
 
+  const getOffset = () => {
+    const w = window.innerWidth;
+    let containerWidth: number;
+    let px: number;
+
+    if (w >= 1536) {
+      containerWidth = 1536;
+      px = 24;
+    } else if (w >= 1280) {
+      containerWidth = 1280;
+      px = 24;
+    } else if (w >= 1024) {
+      containerWidth = 1024;
+      px = 24;
+    } else if (w >= 768) {
+      containerWidth = 768;
+      px = 20;
+    } else if (w >= 640) {
+      containerWidth = 640;
+      px = 20;
+    } else {
+      containerWidth = w;
+      px = 16;
+    }
+
+    const margin = Math.max(0, (w - containerWidth) / 2);
+    return margin + px;
+  };
+
   return (
-    <div className="container mx-auto px-6 flex flex-col gap-12 py-20">
-      <div className="flex gap-6 justify-between items-center">
+    <div className="flex flex-col gap-12 py-28">
+      <div className="container mx-auto px-6 flex gap-6 justify-between items-center">
         <h2 className="text-4xl font-semibold dark:text-white">
-          Самые популярные направления
+          {t("landing:popularDirections")}
         </h2>
-        <Link to={RoutesUrls.helpMeChoose}>
+        <Link to={RoutesUrls.directionQuiz}>
           <Button
             type="link"
             size="large"
             icon={<AltArrowRight />}
-            iconPosition="end"
+            iconPlacement="end"
           >
-            Помощь с выбором
+            {t("buttons.helpChoose")}
           </Button>
         </Link>
       </div>
 
       <Swiper
-        slidesPerView={3}
+        slidesPerView="auto"
         spaceBetween={24}
-        // breakpoints={{
-        //   0: { slidesPerView: 1, spaceBetween: 12 },
-        //   640: { slidesPerView: 2, spaceBetween: 16 },
-        //   1024: { slidesPerView: 3, spaceBetween: 24 },
-        // }}
+        slidesOffsetBefore={getOffset()}
+        slidesOffsetAfter={24}
+        breakpoints={{
+          0: {
+            spaceBetween: 12,
+            slidesOffsetBefore: getOffset(),
+            slidesOffsetAfter: 16,
+          },
+          640: {
+            spaceBetween: 16,
+            slidesOffsetBefore: getOffset(),
+            slidesOffsetAfter: 20,
+          },
+          1024: {
+            spaceBetween: 24,
+            slidesOffsetBefore: getOffset(),
+            slidesOffsetAfter: 24,
+          },
+        }}
         onSwiper={(swiper) => {
           setTimeout(() => {
             if (
@@ -56,10 +99,22 @@ export const PopularDirections = () => {
             swiper.navigation.update();
           });
         }}
-        modules={[Pagination, Navigation]}
+        modules={[Navigation]}
         className="w-full"
       >
-        <div className="flex justify-end gap-3 p-6">
+        {DIRECTIONS.map((direction) => (
+          <SwiperSlide
+            key={direction.id}
+            style={{ height: "auto", width: "440px" }}
+          >
+            <DirectionCardView
+              direction={direction}
+              bordered={false}
+              style={{ height: "100%" }}
+            />
+          </SwiperSlide>
+        ))}
+        <div className="container mx-auto flex justify-end gap-3 py-6 px-12">
           <Button
             ref={navigationPrevRef}
             icon={<AltArrowLeft />}
@@ -73,15 +128,6 @@ export const PopularDirections = () => {
             size="large"
           />
         </div>
-        {DIRECTIONS.map((direction) => (
-          <SwiperSlide key={direction.id} style={{ height: "auto" }}>
-            <DirectionCardView
-              direction={direction}
-              bordered={false}
-              style={{ height: "100%" }}
-            />
-          </SwiperSlide>
-        ))}
       </Swiper>
     </div>
   );

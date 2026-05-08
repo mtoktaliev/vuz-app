@@ -1,6 +1,6 @@
 import {
   HeroSection,
-  HowToProceedSection,
+  AdmissionSteps,
   PopularDirections,
 } from "~widgets/landing";
 
@@ -8,7 +8,7 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <HeroSection />
-      <HowToProceedSection />
+      <AdmissionSteps />
       <PopularDirections />
     </>
   );

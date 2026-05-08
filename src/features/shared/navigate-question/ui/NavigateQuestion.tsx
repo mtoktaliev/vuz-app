@@ -1,5 +1,5 @@
 import { useAtomValue } from "jotai";
-import { currentAnswerAtom } from "~entities/landing/quiz-session";
+import { currentAnswerAtom } from "~entities/landing/direction-quiz";
 import { useNavigateQuestion } from "../model";
 import { Button } from "antd";
 import { ArrowLeft, ArrowRight } from "@solar-icons/react-perf/Outline";

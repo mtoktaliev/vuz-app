@@ -5,9 +5,11 @@
     "ru": "Рус",
     "ky": "Кыр",
     "logInAccount": "Войти в кабинет",
-    "chooseUniversity": "Выбрать вуз",
+    "universitiesList": "Список вузов",
     "login": "Войти",
-    "watchVideo": "Смотреть видео"
+    "watchVideo": "Смотреть видео",
+    "learnMore": "Узнать больше",
+    "helpChoose": "Помогите выбрать"
   },
   "routes": {
     "home": "Главная",
@@ -15,5 +17,8 @@
     "openData": "Открытые данные",
     "faq": "Вопросы/ответы",
     "registration": "Регистрация"
+  },
+  "notify": {
+    "notFound": "Не найдено"
   }
 }

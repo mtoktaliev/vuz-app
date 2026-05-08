@@ -5,5 +5,5 @@ export const RoutesUrls = {
   faq: `/faq`,
   registration: `/registration`,
   login: `/login`,
-  helpMeChoose: `/help-me-choose`,
+  directionQuiz: `/direction-quiz`,
 };

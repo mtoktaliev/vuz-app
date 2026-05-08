@@ -1,4 +1,4 @@
-import type { IQuestion } from "~entities/landing/question";
+import type { IQuestion } from "~entities/landing/direction-quiz";
 import {
   CalculatorMinimalistic,
   Laptop,

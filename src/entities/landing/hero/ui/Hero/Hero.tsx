@@ -15,9 +15,9 @@ export const Hero: React.FC = () => {
   return (
     <>
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-12 py-20">
+        <div className="grid grid-cols-12 py-28">
           <div className="col-span-8 col-start-3 text-center flex flex-col gap-12">
-            <div className="bg-white py-1 px-4 w-fit mx-auto rounded-full dark:bg-slate-800">
+            <div className="bg-white py-1 px-4 w-fit mx-auto rounded-full dark:bg-slate-950/50">
               <ShinyText
                 text="⚡2020.edu.gov.kg/vuz v2.0"
                 speed={2}
@@ -63,7 +63,7 @@ export const Hero: React.FC = () => {
                   shape="round"
                   style={{ padding: "24px 30px" }}
                 >
-                  {t("cm:buttons:chooseUniversity")}
+                  {t("cm:buttons:universitiesList")}
                 </Button>
               </Link>
             </div>

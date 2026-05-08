@@ -22,7 +22,7 @@ export const LandingHeader: React.FC = () => {
   ];
 
   return (
-    <Header className="container mx-auto px-3 bg-white/50 rounded-xl backdrop-blur dark:bg-slate-950/50 border border-slate-200/50 dark:border-slate-800/50">
+    <Header className="px-3 bg-white/50 rounded-xl backdrop-blur dark:bg-slate-950/50 border border-slate-200/50 dark:border-slate-800/50">
       <div className="grid grid-cols-12 items-center h-12 gap-6">
         <div className="col-span-3">
           <Link to={RoutesUrls.home}>

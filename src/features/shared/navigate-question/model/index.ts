@@ -6,8 +6,8 @@ import {
   isTransitioningAtom,
   isLoadingResultAtom,
   answersAtom,
-} from "~entities/landing/quiz-session";
-import { useQuestions } from "~entities/landing/question";
+} from "~entities/landing/direction-quiz";
+import { useQuestions } from "~entities/landing/direction-quiz";
 import confetti from "canvas-confetti";
 
 export const useNavigateQuestion = () => {

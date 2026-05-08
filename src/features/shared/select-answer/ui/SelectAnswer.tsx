@@ -1,7 +1,7 @@
 import { useAtomValue } from "jotai";
-import { currentAnswerAtom } from "~entities/landing/quiz-session";
+import { currentAnswerAtom } from "~entities/landing/direction-quiz";
 import { useSelectAnswer } from "../model";
-import type { IQuestionOption } from "~entities/landing/question";
+import type { IQuestionOption } from "~entities/landing/direction-quiz";
 import { Button } from "antd";
 
 interface Props {

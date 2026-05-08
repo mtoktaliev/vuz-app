@@ -5,9 +5,11 @@
     "ru": "Рус",
     "ky": "Кыр",
     "logInAccount": "Кабинетке кирүү",
-    "chooseUniversity": "ЖОЖду тандоо",
+    "universitiesList": "ЖОЖдордун тизмеси",
     "login": "Кирүү",
-    "watchVideo": "Видео көрүү"
+    "watchVideo": "Видео көрүү",
+    "learnMore": "Толугураак маалымат",
+    "helpChoose": "Тандоого жардам"
   },
   "routes": {
     "home": "Башкы бет",
@@ -15,5 +17,8 @@
     "openData": "Ачык маалыматтар",
     "faq": "Суроо / жооптор",
     "registration": "Катталуу"
+  },
+  "notify": {
+    "notFound": "Табылган жок"
   }
 }
