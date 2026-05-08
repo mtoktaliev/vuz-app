@@ -2,6 +2,7 @@ import {
   HeroSection,
   AdmissionSteps,
   PopularDirections,
+  RequiredDocuments,
 } from "~widgets/landing";
 
 export const HomePage: React.FC = () => {
@@ -10,6 +11,7 @@ export const HomePage: React.FC = () => {
       <HeroSection />
       <AdmissionSteps />
       <PopularDirections />
+      <RequiredDocuments />
     </>
   );
 };

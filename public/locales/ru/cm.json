@@ -16,7 +16,8 @@
     "universities": "Вузы",
     "openData": "Открытые данные",
     "faq": "Вопросы/ответы",
-    "registration": "Регистрация"
+    "registration": "Регистрация",
+    "directionQuiz": "Подбор направлений"
   },
   "notify": {
     "notFound": "Не найдено"

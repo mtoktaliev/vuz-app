@@ -16,6 +16,7 @@
     "canvas-confetti": "^1.9.4",
     "classnames": "^2.5.1",
     "compose-function": "^3.0.3",
+    "framer-motion": "^12.38.0",
     "gsap": "^3.15.0",
     "i18next": "^26.0.8",
     "i18next-browser-languagedetector": "^8.2.1",

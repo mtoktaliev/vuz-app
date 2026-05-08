@@ -9,6 +9,8 @@ import { QuizStepper } from "~widgets/landing";
 import { ResultCard } from "~widgets/landing";
 import { AiLoader } from "~shared/ui/AiLoader";
 import { useTranslation } from "react-i18next";
+import { Breadcrumb } from "antd";
+import { Link } from "react-router-dom";
 
 export const DirectionQuizPage = () => {
   const status = useAtomValue(quizStatusAtom);
@@ -22,7 +24,19 @@ export const DirectionQuizPage = () => {
 
   return (
     <>
-      <div className="container mx-auto px-6 flex flex-col gap-6 py-20">
+      <div className="container mx-auto px-6 flex flex-col gap-6 py-12">
+        <div className="px-2">
+          <Breadcrumb
+            items={[
+              {
+                title: <Link to="/">{t("routes.home")}</Link>,
+              },
+              {
+                title: t("routes.directionQuiz"),
+              },
+            ]}
+          />
+        </div>
         <div className="grid grid-cols-12">
           <div className="col-span-8 col-start-3 flex flex-col gap-6">
             <div className="flex flex-col gap-3">
