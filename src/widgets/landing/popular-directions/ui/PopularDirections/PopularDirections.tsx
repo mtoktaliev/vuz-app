@@ -65,7 +65,7 @@ export const PopularDirections = () => {
       </div>
 
       <Swiper
-        slidesPerView="auto"
+        slidesPerView={3.5}
         spaceBetween={24}
         slidesOffsetBefore={getOffset()}
         slidesOffsetAfter={24}
@@ -103,10 +103,7 @@ export const PopularDirections = () => {
         className="w-full"
       >
         {DIRECTIONS.map((direction) => (
-          <SwiperSlide
-            key={direction.id}
-            style={{ height: "auto", width: "440px" }}
-          >
+          <SwiperSlide key={direction.id} style={{ height: "auto" }}>
             <DirectionCardView
               direction={direction}
               bordered={false}

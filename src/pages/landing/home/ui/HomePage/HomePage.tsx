@@ -12,6 +12,7 @@ export const HomePage: React.FC = () => {
       <AdmissionSteps />
       <PopularDirections />
       <RequiredDocuments />
+      <PopularDirections />
     </>
   );
 };

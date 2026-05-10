@@ -9,7 +9,7 @@ const DOCUMENTS = [
     description:
       "Оригинал или нотариально заверенная копия аттестата о среднем образовании",
     icon: "🎓",
-    color: "bg-slate-100 dark:bg-slate-800",
+    color: "bg-gradient-to-t from-slate-200/0 to-slate-200/50 backdrop-blur-md",
   },
   {
     id: 2,
@@ -17,14 +17,14 @@ const DOCUMENTS = [
     description:
       "Паспорт или удостоверение личности гражданина Кыргызской Республики",
     icon: "🪪",
-    color: "bg-slate-200 dark:bg-blue-950",
+    color: "bg-gradient-to-t from-slate-300/0 to-slate-300/50 backdrop-blur-md",
   },
   {
     id: 3,
     title: "Сертификат ОРТ",
     description: "Результаты Общереспубликанского тестирования текущего года",
     icon: "📋",
-    color: "bg-slate-300 dark:bg-emerald-950",
+    color: "bg-gradient-to-t from-slate-400/0 to-slate-400/50 backdrop-blur-md",
   },
 ];
 
@@ -57,16 +57,22 @@ const DocumentCard = ({ doc, index, total, containerRef }: CardProps) => {
     [1, 1 - (total - index - 1) * 0.04],
   );
 
-  const top = `${index * 24 + 160}px`;
+  const top = `${index * 24 + 98}px`;
 
   return (
     <motion.div
-      style={{ y, scale, top, position: "sticky" }}
+      style={{
+        y,
+        scale,
+        top,
+        position: "sticky",
+        height: "calc(100vh - 200px)",
+      }}
       className={`
-        ${doc.color} ${doc.border}
+        ${doc.color}
         rounded-2xl p-10
         flex flex-col gap-6
-        mx-auto w-full h-screen
+        mx-auto w-full
       `}
     >
       <div className="flex items-center gap-4">
@@ -107,7 +113,7 @@ export const RequiredDocuments = () => {
         {/* высота контейнера = кол-во карточек × высота секции */}
         <div
           ref={containerRef}
-          style={{ height: `${DOCUMENTS.length * 100 + 50}vh` }}
+          style={{ height: `${DOCUMENTS.length * 100}vh` }}
           className="relative"
         >
           {DOCUMENTS.map((doc, index) => (
