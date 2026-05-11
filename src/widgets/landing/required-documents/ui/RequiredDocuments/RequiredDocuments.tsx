@@ -1,30 +1,40 @@
 // widgets/landing/required-documents/ui/RequiredDocuments.tsx
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  PassportMinimalistic,
+  Diploma,
+  DiplomaVerified,
+} from "@solar-icons/react-perf/Linear";
+
+import online from "~shared/assets/online.png";
 
 const DOCUMENTS = [
   {
     id: 1,
-    title: "Аттестат об окончании школы",
+    title: "Поступление полностью онлайн",
     description:
-      "Оригинал или нотариально заверенная копия аттестата о среднем образовании",
-    icon: "🎓",
-    color: "bg-gradient-to-t from-slate-200/0 to-slate-200/50 backdrop-blur-md",
+      "Подайте заявление на участие в конкурсе и выберите вуз в электронном формате — быстро, удобно и без лишней бюрократии",
+    image: online,
+    icon: null,
+    color: "bg-gradient-to-t from-slate-100/0 to-slate-100 backdrop-blur-md",
   },
   {
     id: 2,
-    title: "Удостоверение личности",
+    title: "Прозрачное и автоматизированное зачисление",
     description:
-      "Паспорт или удостоверение личности гражданина Кыргызской Республики",
-    icon: "🪪",
-    color: "bg-gradient-to-t from-slate-300/0 to-slate-300/50 backdrop-blur-md",
+      "Система автоматически учитывает результаты ОРТ, формирует рейтинги и списки рекомендованных к зачислению абитуриентов",
+    icon: <Diploma />,
+    color:
+      "bg-gradient-to-t from-indigo-100/0 to-indigo-100/50 backdrop-blur-xl",
   },
   {
     id: 3,
-    title: "Сертификат ОРТ",
-    description: "Результаты Общереспубликанского тестирования текущего года",
-    icon: "📋",
-    color: "bg-gradient-to-t from-slate-400/0 to-slate-400/50 backdrop-blur-md",
+    title: "Интеграция с государственными сервисами",
+    description:
+      "Необходимые документы и данные предоставляются через систему межведомственного взаимодействия «Тундук», что упрощает процесс поступления для абитуриентов и вузов",
+    icon: <DiplomaVerified />,
+    color: "bg-gradient-to-t from-rose-100/0 to-rose-100/50 backdrop-blur-md",
   },
 ];
 
@@ -70,25 +80,28 @@ const DocumentCard = ({ doc, index, total, containerRef }: CardProps) => {
       }}
       className={`
         ${doc.color}
-        rounded-2xl p-10
-        flex flex-col gap-6
+        rounded-3xl p-20
+        flex flex-col gap-6 items-center
         mx-auto w-full
       `}
     >
-      <div className="flex items-center gap-4">
-        <span className="text-5xl">{doc.icon}</span>
-        <div>
-          <p className="text-sm text-slate-400 mb-1">
-            Документ {index + 1} из {total}
-          </p>
-          <h3 className="text-2xl font-semibold dark:text-white">
-            {doc.title}
-          </h3>
+      <div className="grid grid-cols-12">
+        <div className="col-span-6 col-start-4">
+          <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-2">
+              <h3 className="text-3xl text-center font-semibold dark:text-white">
+                {doc.title}
+              </h3>
+              <p className="text-center text-xl text-slate-500">
+                {doc.description}
+              </p>
+            </div>
+            <span className="text-5xl text-primary flex justify-center items-center">
+              {doc.image ? <img src={doc.image} alt={doc.title} /> : doc.icon}
+            </span>
+          </div>
         </div>
       </div>
-      <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">
-        {doc.description}
-      </p>
     </motion.div>
   );
 };
@@ -102,18 +115,15 @@ export const RequiredDocuments = () => {
         <div className="grid grid-cols-12">
           <div className="col-span-8 col-start-3 text-center flex flex-col gap-4">
             <h2 className="text-5xl font-semibold dark:text-white">
-              Документы необходимые для поступления
+              Почему это удобно?
             </h2>
-            <p className="text-xl text-slate-500 dark:text-slate-400">
-              Подготовьте эти документы перед подачей заявления
-            </p>
           </div>
         </div>
 
         {/* высота контейнера = кол-во карточек × высота секции */}
         <div
           ref={containerRef}
-          style={{ height: `${DOCUMENTS.length * 100}vh` }}
+          // style={{ height: `${DOCUMENTS.length * 100}vh` }}
           className="relative"
         >
           {DOCUMENTS.map((doc, index) => (
