@@ -48,21 +48,13 @@ export const VideoPlayer: React.FC<IVideoPlayerProps> = ({
         centered
         destroyOnHidden
       >
-        <div style={{ position: "relative", paddingTop: "56.25%" }}>
-          <iframe
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              border: "none",
-            }}
-            src={`https://www.youtube.com/embed/${video_id}?autoplay=1`}
-            title={video_title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
+        <iframe
+          className="aspect-video rounded"
+          src={`https://www.youtube.com/embed/${video_id}?autoplay=1`}
+          title={video_title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
       </Modal>
     </>
   );
