@@ -13,22 +13,40 @@ export const VideoPlayer: React.FC<IVideoPlayerProps> = ({
   actionSlot,
 }) => {
   const [open, setOpen] = useState(false);
+  const [blurred, setBlurred] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+    // Небольшая задержка, чтобы transition успел сработать после mount
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => setBlurred(true));
+    });
+  };
+
+  const handleClose = () => {
+    setBlurred(false);
+    setTimeout(() => setOpen(false), 100);
+  };
 
   return (
     <>
-      {actionSlot && actionSlot(setOpen)}
+      {open && (
+        <div
+          className={`fixed inset-0 z-50 transition-all duration-500 ${
+            blurred ? "backdrop-blur-md" : "backdrop-blur-none"
+          }`}
+        />
+      )}
+
+      {actionSlot && actionSlot(handleOpen)}
 
       <Modal
         open={open}
-        onCancel={() => setOpen(false)}
+        onCancel={handleClose}
         footer={null}
         width={860}
         centered
         destroyOnHidden
-        styles={{
-          body: { padding: 0 },
-          wrapper: { padding: 0, overflow: "hidden", borderRadius: 16 },
-        }}
       >
         <div style={{ position: "relative", paddingTop: "56.25%" }}>
           <iframe
