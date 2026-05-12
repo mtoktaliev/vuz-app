@@ -25,14 +25,14 @@ export const VideoPlayer: React.FC<IVideoPlayerProps> = ({
 
   const handleClose = () => {
     setBlurred(false);
-    setTimeout(() => setOpen(false), 100);
+    setTimeout(() => setOpen(false), 300);
   };
 
   return (
     <>
       {open && (
         <div
-          className={`fixed inset-0 z-50 transition-all duration-500 ${
+          className={`fixed inset-0 z-50 transition-all duration-1000 ${
             blurred ? "backdrop-blur-md" : "backdrop-blur-none"
           }`}
         />

@@ -8,6 +8,7 @@ import {
 } from "@solar-icons/react-perf/Linear";
 
 import online from "~shared/assets/online.png";
+import tunduk from "~shared/assets/tunduk.png";
 
 const DOCUMENTS = [
   {
@@ -17,13 +18,16 @@ const DOCUMENTS = [
       "Подайте заявление на участие в конкурсе и выберите вуз в электронном формате — быстро, удобно и без лишней бюрократии",
     image: online,
     icon: null,
-    color: "bg-gradient-to-t from-slate-100/0 to-slate-100 backdrop-blur-md",
+    color:
+      "bg-gradient-to-t from-rose-100/0 to-rose-100/50 backdrop-blur-md dark:bg-gradient-to-t dark:from-slate-100/0 dark:to-slate-950/50",
+    // color: "bg-gradient-to-t from-slate-100/0 to-slate-100 backdrop-blur-md",
   },
   {
     id: 2,
     title: "Прозрачное и автоматизированное зачисление",
     description:
       "Система автоматически учитывает результаты ОРТ, формирует рейтинги и списки рекомендованных к зачислению абитуриентов",
+    image: online,
     icon: <Diploma />,
     color:
       "bg-gradient-to-t from-indigo-100/0 to-indigo-100/50 backdrop-blur-xl",
@@ -33,6 +37,7 @@ const DOCUMENTS = [
     title: "Интеграция с государственными сервисами",
     description:
       "Необходимые документы и данные предоставляются через систему межведомственного взаимодействия «Тундук», что упрощает процесс поступления для абитуриентов и вузов",
+    image: tunduk,
     icon: <DiplomaVerified />,
     color: "bg-gradient-to-t from-rose-100/0 to-rose-100/50 backdrop-blur-md",
   },
@@ -92,7 +97,7 @@ const DocumentCard = ({ doc, index, total, containerRef }: CardProps) => {
               <h3 className="text-3xl text-center font-semibold dark:text-white">
                 {doc.title}
               </h3>
-              <p className="text-center text-xl text-slate-500">
+              <p className="text-center text-xl text-slate-500 dark:text-slate-400">
                 {doc.description}
               </p>
             </div>
