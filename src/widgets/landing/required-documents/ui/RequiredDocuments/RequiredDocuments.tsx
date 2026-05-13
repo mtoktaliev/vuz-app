@@ -9,6 +9,7 @@ import {
 
 import online from "~shared/assets/online.png";
 import tunduk from "~shared/assets/tunduk.png";
+import automation from "~shared/assets/automatic.png";
 
 const DOCUMENTS = [
   {
@@ -19,7 +20,7 @@ const DOCUMENTS = [
     image: online,
     icon: null,
     color:
-      "bg-gradient-to-t from-rose-100/0 to-rose-100/50 backdrop-blur-md dark:bg-gradient-to-t dark:from-slate-100/0 dark:to-slate-950/50",
+      "bg-gradient-to-t from-slate-200/0 to-slate-200/50 backdrop-blur-md dark:bg-gradient-to-t dark:from-slate-100/0 dark:to-slate-950/50",
     // color: "bg-gradient-to-t from-slate-100/0 to-slate-100 backdrop-blur-md",
   },
   {
@@ -27,10 +28,9 @@ const DOCUMENTS = [
     title: "Прозрачное и автоматизированное зачисление",
     description:
       "Система автоматически учитывает результаты ОРТ, формирует рейтинги и списки рекомендованных к зачислению абитуриентов",
-    image: online,
+    image: automation,
     icon: <Diploma />,
-    color:
-      "bg-gradient-to-t from-indigo-100/0 to-indigo-100/50 backdrop-blur-xl",
+    color: "bg-gradient-to-t from-indigo-100/0 to-indigo-100 backdrop-blur-xl",
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const DOCUMENTS = [
       "Необходимые документы и данные предоставляются через систему межведомственного взаимодействия «Тундук», что упрощает процесс поступления для абитуриентов и вузов",
     image: tunduk,
     icon: <DiplomaVerified />,
-    color: "bg-gradient-to-t from-rose-100/0 to-rose-100/50 backdrop-blur-md",
+    color: "bg-gradient-to-t from-teal-200/0 to-teal-200 backdrop-blur-xl",
   },
 ];
 
