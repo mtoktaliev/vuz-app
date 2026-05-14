@@ -21,7 +21,7 @@ export const DirectionCardView = ({
     <div
       style={style}
       className={`
-        bg-white dark:bg-slate-950/50 p-6 rounded-2xl flex flex-col gap-6
+        bg-white dark:bg-slate-950/50 p-6 rounded-3xl flex flex-col gap-6
         ${
           bordered
             ? isPrimary

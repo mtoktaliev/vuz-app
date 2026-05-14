@@ -1,6 +1,4 @@
-import { Button } from "antd";
 import { useTranslation } from "~shared/lib/i18n";
-import { AltArrowRight } from "@solar-icons/react-perf/Outline";
 import { IAdmissionStep } from "../../model";
 
 interface Props {
@@ -11,20 +9,15 @@ export const AdmissionStepView = ({ step }: Props) => {
   const { t } = useTranslation();
 
   return (
-    <div className="p-12 rounded-2xl bg-slate-100 dark:bg-slate-900 flex flex-col gap-6 h-full">
+    <div className="p-10 rounded-3xl bg-slate-100 dark:bg-slate-900 flex flex-col gap-6 h-full relative">
       <div className="flex flex-col gap-12">
-        <div className="flex flex-col">
-          <h3 className="font-semibold text-center text-lg dark:text-white">
+        <div className="flex flex-col gap-2">
+          <h3 className="font-semibold text-lg dark:text-white">
             {t(step.title)}
           </h3>
-          <Button
-            type="link"
-            size="large"
-            icon={<AltArrowRight />}
-            iconPlacement="end"
-          >
-            {t("buttons.learnMore")}
-          </Button>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            {t(step.description)}
+          </p>
         </div>
         <div className="flex justify-center">
           <img src={step.image} alt={step.title} />

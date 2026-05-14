@@ -1,7 +1,7 @@
-export interface IAdmissionStep {
+export interface IAdvantage {
   id: number;
   title: string;
   description: string;
   image: string;
-  link: string;
+  color: string;
 }

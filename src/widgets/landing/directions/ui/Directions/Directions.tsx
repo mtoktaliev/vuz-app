@@ -12,7 +12,7 @@ import { DIRECTIONS } from "~shared/config/directions";
 import "swiper/css";
 import "swiper/css/navigation";
 
-export const PopularDirections = () => {
+export const Directions = () => {
   const { t } = useTranslation();
   const navigationPrevRef = useRef<HTMLButtonElement>(null);
   const navigationNextRef = useRef<HTMLButtonElement>(null);
