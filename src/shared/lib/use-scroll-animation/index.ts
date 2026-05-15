@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 export function useScrollAnimation<T extends HTMLElement>(
   options?: IntersectionObserverInit,
-  childSelector?: string, // <-- новый параметр
+  childSelector?: string,
 ) {
   const ref = useRef<T>(null);
   const optionsRef = useRef(options);
@@ -14,7 +14,6 @@ export function useScrollAnimation<T extends HTMLElement>(
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         if (childSelector) {
-          // добавляем класс дочерним элементам
           el.querySelectorAll(childSelector).forEach((child) => {
             child.classList.add("is-visible");
           });
