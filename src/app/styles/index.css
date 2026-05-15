@@ -15,3 +15,22 @@
 * {
   font-family: "Inter", sans-serif;
 }
+
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1.2);
+}
+
+.anim-fade-up.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up {
+    transition: none;
+  }
+}

@@ -11,11 +11,14 @@ import { DirectionCardView } from "~entities/landing/direction";
 import { DIRECTIONS } from "~shared/config/directions";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useScrollAnimation } from "~shared/lib/use-scroll-animation";
 
 export const Directions = () => {
   const { t } = useTranslation();
   const navigationPrevRef = useRef<HTMLButtonElement>(null);
   const navigationNextRef = useRef<HTMLButtonElement>(null);
+  const headerRef = useScrollAnimation<HTMLDivElement>();
+  const sliderRef = useScrollAnimation<HTMLDivElement>();
 
   const getOffset = () => {
     const w = window.innerWidth;
@@ -48,7 +51,10 @@ export const Directions = () => {
 
   return (
     <div className="flex flex-col gap-12 py-28">
-      <div className="container mx-auto px-6 flex gap-6 justify-between items-center">
+      <div
+        ref={headerRef}
+        className="container mx-auto px-6 flex gap-6 justify-between items-center anim-fade-up"
+      >
         <h2 className="text-4xl font-semibold dark:text-white">
           {t("landing:popularDirections")}
         </h2>
@@ -63,69 +69,70 @@ export const Directions = () => {
           </Button>
         </Link>
       </div>
-
-      <Swiper
-        slidesPerView={3.5}
-        spaceBetween={24}
-        slidesOffsetBefore={getOffset()}
-        slidesOffsetAfter={24}
-        breakpoints={{
-          0: {
-            spaceBetween: 12,
-            slidesOffsetBefore: getOffset(),
-            slidesOffsetAfter: 16,
-          },
-          640: {
-            spaceBetween: 16,
-            slidesOffsetBefore: getOffset(),
-            slidesOffsetAfter: 20,
-          },
-          1024: {
-            spaceBetween: 24,
-            slidesOffsetBefore: getOffset(),
-            slidesOffsetAfter: 24,
-          },
-        }}
-        onSwiper={(swiper) => {
-          setTimeout(() => {
-            if (
-              swiper.params.navigation &&
-              typeof swiper.params.navigation !== "boolean"
-            ) {
-              swiper.params.navigation.prevEl = navigationPrevRef.current;
-              swiper.params.navigation.nextEl = navigationNextRef.current;
-            }
-            swiper.navigation.init();
-            swiper.navigation.update();
-          });
-        }}
-        modules={[Navigation]}
-        className="w-full"
-      >
-        {DIRECTIONS.map((direction) => (
-          <SwiperSlide key={direction.id} style={{ height: "auto" }}>
-            <DirectionCardView
-              direction={direction}
-              bordered={false}
-              style={{ height: "100%" }}
+      <div className="anim-fade-up" ref={sliderRef}>
+        <Swiper
+          slidesPerView={3.5}
+          spaceBetween={24}
+          slidesOffsetBefore={getOffset()}
+          slidesOffsetAfter={24}
+          breakpoints={{
+            0: {
+              spaceBetween: 12,
+              slidesOffsetBefore: getOffset(),
+              slidesOffsetAfter: 16,
+            },
+            640: {
+              spaceBetween: 16,
+              slidesOffsetBefore: getOffset(),
+              slidesOffsetAfter: 20,
+            },
+            1024: {
+              spaceBetween: 24,
+              slidesOffsetBefore: getOffset(),
+              slidesOffsetAfter: 24,
+            },
+          }}
+          onSwiper={(swiper) => {
+            setTimeout(() => {
+              if (
+                swiper.params.navigation &&
+                typeof swiper.params.navigation !== "boolean"
+              ) {
+                swiper.params.navigation.prevEl = navigationPrevRef.current;
+                swiper.params.navigation.nextEl = navigationNextRef.current;
+              }
+              swiper.navigation.init();
+              swiper.navigation.update();
+            });
+          }}
+          modules={[Navigation]}
+          className="w-full"
+        >
+          {DIRECTIONS.map((direction) => (
+            <SwiperSlide key={direction.id} style={{ height: "auto" }}>
+              <DirectionCardView
+                direction={direction}
+                bordered={false}
+                style={{ height: "100%" }}
+              />
+            </SwiperSlide>
+          ))}
+          <div className="container mx-auto flex justify-end gap-3 py-6 px-12">
+            <Button
+              ref={navigationPrevRef}
+              icon={<AltArrowLeft />}
+              shape="circle"
+              size="large"
             />
-          </SwiperSlide>
-        ))}
-        <div className="container mx-auto flex justify-end gap-3 py-6 px-12">
-          <Button
-            ref={navigationPrevRef}
-            icon={<AltArrowLeft />}
-            shape="circle"
-            size="large"
-          />
-          <Button
-            ref={navigationNextRef}
-            icon={<AltArrowRight />}
-            shape="circle"
-            size="large"
-          />
-        </div>
-      </Swiper>
+            <Button
+              ref={navigationNextRef}
+              icon={<AltArrowRight />}
+              shape="circle"
+              size="large"
+            />
+          </div>
+        </Swiper>
+      </div>
     </div>
   );
 };
