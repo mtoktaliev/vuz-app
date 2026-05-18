@@ -1,9 +1,9 @@
 import { IAdmissionStep } from "~entities/landing/admission-step";
 import {
-  CreateAccount,
-  ChooseUniversity,
-  SendORT,
-  ConfirmStudies,
+  CreateAccountIcon,
+  ChooseUniversityIcon,
+  SendORTIcon,
+  ConfirmStudiesIcon,
 } from "~shared/ui";
 
 export const ADMISSION_STEPS: IAdmissionStep[] = [
@@ -11,24 +11,24 @@ export const ADMISSION_STEPS: IAdmissionStep[] = [
     id: 1,
     title: "landing:admissionStep1",
     description: "landing:admissionStepDescription1",
-    icon: CreateAccount,
+    icon: CreateAccountIcon,
   },
   {
     id: 2,
     title: "landing:admissionStep2",
     description: "landing:admissionStepDescription2",
-    icon: ChooseUniversity,
+    icon: ChooseUniversityIcon,
   },
   {
     id: 3,
     title: "landing:admissionStep3",
     description: "landing:admissionStepDescription3",
-    icon: SendORT,
+    icon: SendORTIcon,
   },
   {
     id: 4,
     title: "landing:admissionStep4",
     description: "landing:admissionStepDescription4",
-    icon: ConfirmStudies,
+    icon: ConfirmStudiesIcon,
   },
 ];
