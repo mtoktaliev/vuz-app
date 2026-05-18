@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
                 {t("landing:heroDescription")}
               </p>
             </div>
-            <div className="flex justify-center gap-6">
+            <div className="flex justify-center gap-3">
               <Link to={RoutesUrls.login}>
                 <Button
                   type="primary"

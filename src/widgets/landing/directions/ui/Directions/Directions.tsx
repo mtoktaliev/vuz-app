@@ -3,7 +3,7 @@ import { Button } from "antd";
 import { useRef } from "react";
 import { AltArrowLeft, AltArrowRight } from "@solar-icons/react-perf/Outline";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { useTranslation } from "~shared/lib/i18n";
 import { RoutesUrls } from "~shared/lib/router/types";
@@ -75,6 +75,10 @@ export const Directions = () => {
           spaceBetween={24}
           slidesOffsetBefore={getOffset()}
           slidesOffsetAfter={24}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             0: {
               spaceBetween: 12,
@@ -105,7 +109,7 @@ export const Directions = () => {
               swiper.navigation.update();
             });
           }}
-          modules={[Navigation]}
+          modules={[Navigation, Pagination, Autoplay]}
           className="w-full"
         >
           {DIRECTIONS.map((direction) => (
