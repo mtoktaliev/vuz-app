@@ -4,8 +4,9 @@ import {
   Directions,
   Advantages,
   Benefits,
+  Faqs,
+  LegalBasis,
 } from "~widgets/landing";
-import { Faqs } from "~widgets/landing/faq/ui/Faqs/Faqs";
 
 export const HomePage: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ export const HomePage: React.FC = () => {
       <Advantages />
       <Benefits />
       <Faqs />
+      <LegalBasis />
     </>
   );
 };

@@ -5,3 +5,5 @@ export * from "./directions";
 export * from "./direction-quiz";
 export * from "./advantages";
 export * from "./benefits";
+export * from "./faq";
+export * from "./legal-basis";
