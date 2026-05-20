@@ -37,7 +37,6 @@ export const Hero: React.FC = () => {
                 delay={200}
                 animateBy="words"
                 direction="top"
-                // onAnimationComplete={handleAnimationComplete}
                 className="text-5xl font-semibold leading-tight dark:text-white text-center flex justify-center items-center"
               />
               <p className="text-2xl text-slate-500 dark:text-slate-400">

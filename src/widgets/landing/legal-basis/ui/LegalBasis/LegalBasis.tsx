@@ -1,7 +1,8 @@
 // widgets/landing/legal-basis/ui/LegalBasis.tsx
 import { useState } from "react";
-import { Segmented } from "antd";
+import { Segmented, Tag } from "antd";
 import { AltArrowRight } from "@solar-icons/react-perf/Outline";
+import { useScrollAnimation } from "~shared/lib/use-scroll-animation";
 
 const LEGAL_ITEMS = [
   {
@@ -39,67 +40,79 @@ const LEGAL_ITEMS = [
 
 export const LegalBasis = () => {
   const [activeId, setActiveId] = useState(LEGAL_ITEMS[0].id);
-
   const active = LEGAL_ITEMS.find((item) => item.id === activeId)!;
+  const headerRef = useScrollAnimation<HTMLDivElement>();
+  const itemRef = useScrollAnimation<HTMLDivElement>(
+    { threshold: 0.1 },
+    ".anim-fade-up",
+  );
 
   return (
-    <div className="bg-white dark:bg-slate-950/50">
-    <div className="container mx-auto px-6 py-20">
-      <div className="grid grid-cols-12">
-        <div className="col-span-8 col-start-3 flex flex-col gap-8">
-          <div className="flex flex-col gap-4 text-center">
-            <h2 className="text-4xl font-semibold dark:text-white">
-              Нормативная правовая база
-            </h2>
-            <p className="text-slate-500 dark:text-slate-400">
-              Документы регулирующие процесс поступления в вузы Кыргызстана
-            </p>
-          </div>
-
-          <div className="">
-            <Segmented
-              options={LEGAL_ITEMS.map((item) => ({
-                label: item.label,
-                value: item.id,
-              }))}
-              value={activeId}
-              onChange={(val) => setActiveId(val as string)}
-              size="large"
-              shape="round"
-              block
-            />
-          </div>
-
-          {/* Карточка */}
-          <a
-            href={active.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group bg-white dark:bg-slate-950 rounded-2xl p-8
-              border-2 border-slate-200 dark:border-slate-800
-              hover:border-primary transition-all flex flex-col gap-4"
+    <div className="bg-white dark:bg-slate-950/50 py-28">
+      <div className="container mx-auto px-6 flex flex-col gap-12">
+        <div className="grid grid-cols-12">
+          <div
+            ref={headerRef}
+            className="col-span-8 col-start-3 flex flex-col gap-12 anim-fade-up"
           >
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex flex-col gap-2 ">
-                <span className="text-xs font-medium text-primary uppercase tracking-wider">
-                  {active.label}
-                </span>
-                <h3 className="text-xl font-semibold dark:text-white leading-snug">
-                  {active.title}
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400">
-                  {active.description}
-                </p>
-              </div>
-              <AltArrowRight
-                size={20}
-                className="shrink-0 mt-1 text-slate-400 group-hover:text-primary transition-colors"
-              />
+            <div className="flex flex-col gap-6 text-center">
+              <h2 className="text-4xl font-semibold dark:text-white">
+                Нормативная правовая база
+              </h2>
+              <p className="text-xl text-slate-500 dark:text-slate-400">
+                Документы регулирующие процесс поступления в вузы Кыргызстана
+              </p>
             </div>
-          </a>
+
+            <div ref={itemRef} className="flex flex-col gap-6">
+              <div className="grid grid-cols-12">
+              <Segmented
+                options={LEGAL_ITEMS.map((item) => ({
+                  label: item.label,
+                  value: item.id,
+                }))}
+                value={activeId}
+                onChange={(val) => setActiveId(val as string)}
+                size="large"
+                shape="round"
+                block
+                className="anim-fade-up col-span-8 col-start-3"
+                style={{ transitionDelay: `${2 * 150}ms` }}
+              />
+              </div>
+              <a
+                href={active.href}
+                target="_blank"
+                className="group bg-slate-50 dark:bg-slate-950 rounded-3xl p-12
+              border border-slate-100 dark:border-slate-800
+              hover:border-primary transition-all"
+              >
+                <div className="flex items-center justify-between gap-6">
+                  <div className="flex flex-col gap-3">
+                    <Tag
+                      variant="filled"
+                      color="blue"
+                      className="uppercase w-fit"
+                    >
+                      {active.label}
+                    </Tag>
+                    <h3 className="text-xl font-semibold dark:text-white leading-snug">
+                      {active.title}
+                    </h3>
+                    <p className="text-slate-500 dark:text-slate-400">
+                      {active.description}
+                    </p>
+                  </div>
+                  <AltArrowRight
+                    size={24}
+                    className="shrink-0 mt-1 text-slate-400 group-hover:text-primary transition-colors"
+                  />
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

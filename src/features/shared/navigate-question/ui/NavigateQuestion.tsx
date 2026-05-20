@@ -10,7 +10,7 @@ export const NavigateQuestion = () => {
   const hasAnswer = currentAnswer !== undefined;
 
   return (
-    <div className="flex items-center justify-between mt-2">
+    <div className="flex items-center justify-between">
       <Button
         onClick={goBack}
         disabled={!canGoBack}

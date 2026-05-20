@@ -37,7 +37,7 @@ export const Benefits = () => {
         className="col-span-6 bg-stone-100 dark:bg-slate-900 px-12 py-16 grid grid-cols-6 rounded-3xl flex-col gap-12 anim-fade-up"
       >
         <div className="flex flex-col col-span-4 gap-12 col-start-2 text-2xl font-semibold text-center dark:text-white">
-          <h2 className="">Участие в конкурсе после военной службы</h2>
+          <h2 className="">Участие в конкурсе после срочной военной службы</h2>
           <div className="grid grid-cols-6">
             <div className="col-span-4 col-start-2">
               <MilitaryIcon

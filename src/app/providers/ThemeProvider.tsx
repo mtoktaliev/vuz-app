@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, type ReactNode } from "react";
 import { ConfigProvider, theme as antTheme } from "antd";
-import { ThemeContext, type Theme } from "../../shared/lib/theme";
+import { ThemeContext, type Theme } from "~shared/lib/theme";
 
 interface ThemeProviderProps {
   children: ReactNode;

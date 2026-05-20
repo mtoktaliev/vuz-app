@@ -14,8 +14,8 @@ export const Faqs = () => {
   );
 
   return (
-    <div className="bg-white dark:bg-slate-950/50 py-28">
-      <div className="flex flex-col gap-12 container mx-auto px-6">
+    <>
+      <div className="flex flex-col gap-12 container mx-auto px-6 py-28">
         <div className="grid grid-cols-12 gap-12">
           <div
             ref={headerRef}
@@ -30,7 +30,7 @@ export const Faqs = () => {
               связи или позвонить по телефону.
             </p>
           </div>
-          <div ref={itemRef} className="col-span-8 col-start-3">
+          <div className="col-span-8 col-start-3">
             <div ref={itemRef}>
               {FAQ.map((faq, index) => (
                 <div
@@ -60,6 +60,6 @@ export const Faqs = () => {
           </Button>
         </Link>
       </div>
-    </div>
+    </>
   );
 };

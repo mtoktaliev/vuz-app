@@ -11,5 +11,8 @@ export const antdTheme: ThemeConfig = {
     Button: {
       borderRadius: 10,
     },
+    Segmented: {
+      controlHeightLG: 54,
+    },
   },
 };

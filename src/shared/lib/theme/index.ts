@@ -1,3 +1,2 @@
-export { ThemeContext } from "./ThemeContext";
-export { useTheme } from "./useTheme";
-export type { Theme, ThemeContextValue } from "./ThemeContext";
+export * from "./ThemeContext";
+export * from "./useTheme";

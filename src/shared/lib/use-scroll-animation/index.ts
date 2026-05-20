@@ -5,7 +5,11 @@ export function useScrollAnimation<T extends HTMLElement>(
   childSelector?: string,
 ) {
   const ref = useRef<T>(null);
-  const optionsRef = useRef(options);
+  const optionsRef = useRef<IntersectionObserverInit>({
+    threshold: 0.15,
+    rootMargin: "0px 0px -100px 0px",
+    ...options,
+  });
 
   useEffect(() => {
     const el = ref.current;
