@@ -1,4 +1,3 @@
-// widgets/landing/legal-basis/ui/LegalBasis.tsx
 import { useState } from "react";
 import { Segmented, Tag } from "antd";
 import { AltArrowRight } from "@solar-icons/react-perf/Outline";
@@ -66,25 +65,25 @@ export const LegalBasis = () => {
 
             <div ref={itemRef} className="flex flex-col gap-6">
               <div className="grid grid-cols-12">
-              <Segmented
-                options={LEGAL_ITEMS.map((item) => ({
-                  label: item.label,
-                  value: item.id,
-                }))}
-                value={activeId}
-                onChange={(val) => setActiveId(val as string)}
-                size="large"
-                shape="round"
-                block
-                className="anim-fade-up col-span-8 col-start-3"
-                style={{ transitionDelay: `${2 * 150}ms` }}
-              />
+                <Segmented
+                  options={LEGAL_ITEMS.map((item) => ({
+                    label: item.label,
+                    value: item.id,
+                  }))}
+                  value={activeId}
+                  onChange={(val) => setActiveId(val as string)}
+                  size="large"
+                  shape="round"
+                  block
+                  className="anim-fade-up col-span-8 col-start-3"
+                  style={{ transitionDelay: `${2 * 150}ms` }}
+                />
               </div>
               <a
                 href={active.href}
                 target="_blank"
-                className="group bg-slate-50 dark:bg-slate-950 rounded-3xl p-12
-              border border-slate-100 dark:border-slate-800
+                className="group bg-slate-100 dark:bg-slate-950 rounded-3xl p-12
+              border border-slate-100 dark:border-slate-950
               hover:border-primary transition-all"
               >
                 <div className="flex items-center justify-between gap-6">

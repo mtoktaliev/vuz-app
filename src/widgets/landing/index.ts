@@ -7,3 +7,4 @@ export * from "./advantages";
 export * from "./benefits";
 export * from "./faq";
 export * from "./legal-basis";
+export * from "./required-documents";

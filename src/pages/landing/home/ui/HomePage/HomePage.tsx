@@ -6,6 +6,7 @@ import {
   Benefits,
   Faqs,
   LegalBasis,
+  RequiredDocuments
 } from "~widgets/landing";
 
 export const HomePage: React.FC = () => {
@@ -18,6 +19,7 @@ export const HomePage: React.FC = () => {
       <Benefits />
       <Faqs />
       <LegalBasis />
+      <RequiredDocuments />
     </>
   );
 };

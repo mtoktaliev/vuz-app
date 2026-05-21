@@ -56,8 +56,8 @@ export const AdvantageView = ({
       <div className="grid grid-cols-12">
         <div className="col-span-6 col-start-4">
           <div className="flex flex-col gap-12">
-            <div className="flex flex-col gap-2 text-center">
-              <h3 className="text-3xl font-semibold dark:text-white">
+            <div className="flex flex-col gap-6 text-center">
+              <h3 className="text-3xl bg-linear-to-r from-primary via-purple-500 to-green-500 font-semibold dark:text-white bg-clip-text text-transparent">
                 {advantage.title}
               </h3>
               <p className="text-xl text-slate-500 dark:text-slate-400">
