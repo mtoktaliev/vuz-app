@@ -90,7 +90,7 @@ export const LegalBasis = () => {
                   <div className="flex flex-col gap-3">
                     <Tag
                       variant="filled"
-                      color="blue"
+                      color="gold"
                       className="uppercase w-fit"
                     >
                       {active.label}
