@@ -8,7 +8,7 @@ import { SetLocaleView } from "~features/shared/locale";
 import { RoutesUrls } from "~shared/lib/router/types";
 import { Button } from "antd";
 import { Header } from "~shared/ui/layout";
-import { ThemeSwitcher } from "~features/shared/theme-switcher";
+import { AnimatedThemeToggler } from "~features/shared/animated-theme-toggler/AnimatedThemeToggler";
 
 export const LandingHeader: React.FC = () => {
   const { t } = useTranslation();
@@ -50,7 +50,7 @@ export const LandingHeader: React.FC = () => {
             </Button>
           </Link>
           <SetLocaleView />
-          <ThemeSwitcher />
+          <AnimatedThemeToggler variant="circle" duration={600} fromCenter />
         </div>
       </div>
     </Header>

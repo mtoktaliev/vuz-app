@@ -1,4 +1,3 @@
-// features/select-answer/model/index.ts
 import { useAtom, useAtomValue } from "jotai";
 import { answersAtom, currentStepAtom } from "~entities/landing/direction-quiz";
 

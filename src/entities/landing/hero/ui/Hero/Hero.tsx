@@ -3,8 +3,8 @@ import { useTranslation } from "~shared/lib/i18n";
 import heroImage from "~shared/assets/heroImg.svg";
 import heroImageWhite from "~shared/assets/heroImgWhite.svg";
 import { useTheme } from "~shared/lib/theme";
-import BlurText from "~features/shared/blur-text/BlurText";
-import ShinyText from "~features/shared/shiny-text/ShinyText";
+import BlurText from "~features/landing/blur-text/BlurText";
+import ShinyText from "~features/landing/shiny-text/ShinyText";
 import { RoutesUrls } from "~shared/lib/router/types";
 import { Link } from "react-router-dom";
 

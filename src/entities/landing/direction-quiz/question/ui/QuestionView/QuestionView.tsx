@@ -1,7 +1,7 @@
 import { useAtomValue } from "jotai";
 import { isTransitioningAtom } from "~entities/landing/direction-quiz";
-import { SelectAnswer } from "~features/shared/select-answer";
-import { NavigateQuestion } from "~features/shared/navigate-question";
+import { SelectAnswer } from "~features/landing/direction-quiz";
+import { NavigateQuestion } from "~features/landing/direction-quiz";
 import type { IQuestion } from "~entities/landing/direction-quiz";
 
 interface Props {

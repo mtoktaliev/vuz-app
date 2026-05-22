@@ -1,5 +1,3 @@
-import { useTheme } from "~shared/lib/theme";
-
 import { CSSProperties, ReactElement, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import cn from "classnames";
@@ -108,7 +106,6 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
 };
 
 export const AiLoader = () => {
-  const { theme } = useTheme();
 
   return (
     <div className="w-full flex flex-col items-center gap-8 py-20">

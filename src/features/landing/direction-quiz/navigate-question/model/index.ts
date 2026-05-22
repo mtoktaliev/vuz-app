@@ -1,4 +1,3 @@
-// features/navigate-question/model/index.ts
 import { useAtom, useSetAtom } from "jotai";
 import {
   currentStepAtom,

@@ -5,7 +5,7 @@ import {
   quizStatusAtom,
   currentStepAtom,
 } from "~entities/landing/direction-quiz";
-import { useCalculateResult } from "~features/shared/calculate-result";
+import { useCalculateResult } from "~features/landing/direction-quiz";
 import { DirectionCardView } from "~entities/landing/direction";
 import { Button } from "antd";
 

@@ -1,23 +1,33 @@
+// ThemeProvider.tsx
 import { useState, useEffect, useMemo, type ReactNode } from "react";
 import { ConfigProvider, theme as antTheme } from "antd";
 import { ThemeContext, type Theme } from "~shared/lib/theme";
 
-interface ThemeProviderProps {
-  children: ReactNode;
-}
+const STORAGE_KEY = "theme";
 
-const STORAGE_KEY = "app-theme";
-
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     const saved = localStorage.getItem(STORAGE_KEY) as Theme | null;
-    if (saved) return saved;
+    if (saved) return saved as Theme;
     return window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
   });
 
-  // Tailwind dark mode — добавляем/убираем класс на <html>
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setTheme(isDark ? "dark" : "light");
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const root = document.documentElement;
     if (theme === "dark") {
@@ -35,7 +45,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      {/* Ant Design ConfigProvider */}
       <ConfigProvider
         theme={{
           algorithm:
@@ -43,7 +52,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
               ? antTheme.darkAlgorithm
               : antTheme.defaultAlgorithm,
           token: {
-            colorPrimary: "#6366f1", // замените на свой
+            colorPrimary: "#6366f1",
           },
         }}
       >
