@@ -8,7 +8,7 @@ import { LandingHeader } from "~widgets/landing/landing-header";
 export const LandingLayout: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-slate-100 dark:bg-slate-900 transition-colors">
-      <div className="sticky top-6 z-50 px-6 container mx-auto">
+      <div className="sticky top-0 lg:top-6 z-50 lg:px-6 lg:container mx-auto w-full overflow-x-hidden">
         <LandingHeader />
       </div>
       <div className="flex-1 mt-6">
