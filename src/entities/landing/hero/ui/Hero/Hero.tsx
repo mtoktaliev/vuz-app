@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
   const { theme } = useTheme();
 
   return (
-    <>
+    <div className="relative">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-12 py-28">
           <div className="col-span-8 col-start-3 text-center flex flex-col gap-12">
@@ -76,6 +76,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
+      <div className="bg-linear-to-t from-white to-white/0 h-1/3 absolute bottom-0 w-full dark:bg-linear-to-t dark:from-slate-950/50 dark:to-slate-950/0"></div>
+    </div>
   );
 };

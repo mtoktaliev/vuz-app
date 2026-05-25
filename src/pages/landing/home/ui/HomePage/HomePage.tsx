@@ -13,13 +13,13 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <HeroSection />
-      <AdmissionSteps />
-      <Directions />
       <Advantages />
+      <AdmissionSteps />
+      <RequiredDocuments />
+      <Directions />
+      <LegalBasis />
       <Benefits />
       <Faqs />
-      <LegalBasis />
-      <RequiredDocuments />
     </>
   );
 };

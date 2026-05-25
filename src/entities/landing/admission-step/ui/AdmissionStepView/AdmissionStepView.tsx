@@ -11,7 +11,7 @@ export const AdmissionStepView = ({ step }: Props) => {
   const { theme } = useTheme();
 
   return (
-    <div className="p-10 rounded-3xl bg-slate-100 dark:bg-slate-900 flex flex-col gap-6 h-full">
+    <div className="p-10 rounded-3xl bg-white dark:bg-slate-950/50 flex flex-col gap-6 h-full">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <h3 className="font-semibold text-lg dark:text-white">

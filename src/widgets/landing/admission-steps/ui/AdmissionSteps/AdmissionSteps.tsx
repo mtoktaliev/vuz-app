@@ -14,7 +14,7 @@ export const AdmissionSteps: React.FC = () => {
   );
   const videoRef = useScrollAnimation<HTMLDivElement>();
   return (
-    <div className="bg-white dark:bg-slate-950/50">
+    <>
       <div className="container mx-auto px-6 flex flex-col gap-12 py-28">
         <div ref={headerRef} className="grid grid-cols-12 anim-fade-up">
           <div className="col-span-8 col-start-3 text-center flex flex-col gap-6">
@@ -56,6 +56,6 @@ export const AdmissionSteps: React.FC = () => {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 };

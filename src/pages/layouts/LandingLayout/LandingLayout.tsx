@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { LandingFooter } from "~widgets/landing/landing-footer";
 
 import { LandingHeader } from "~widgets/landing/landing-header";
 
@@ -13,6 +14,7 @@ export const LandingLayout: React.FC = () => {
       <div className="flex-1 mt-6">
         <Outlet />
       </div>
+      <LandingFooter />
     </div>
   );
 };
