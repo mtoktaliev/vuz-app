@@ -6,7 +6,7 @@ interface AppProps {}
 
 i18nInit(["cm", "landing"], "ru", "cm");
 
-export const withLocalization = (component: Component) => (props: AppProps) => {
+export const withLocalization = (component: React.FunctionComponent) => (props: AppProps) => {
   // const intlProviderProps = useLocaleProvider();
 
   return component(props);
