@@ -7,13 +7,13 @@ interface Props {
 export const RequiredDocumentView = ({ document }: Props) => {
   return (
     <>
-      <div className="bg-slate-100 dark:bg-slate-900 p-12 rounded-3xl flex flex-col gap-6 min-h-full">
+      <div className="bg-slate-100 dark:bg-slate-900 p-6 lg:p-12 rounded-2xl lg:rounded-3xl flex flex-col gap-4 lg:gap-6 min-h-full">
         <div className={document.color}>{document.icon}</div>
         <div className="flex flex-col gap-2">
-          <h3 className="font-semibold text-lg dark:text-white">
+          <h3 className="font-semibold lg:text-lg dark:text-white">
             {document.name}
           </h3>
-          <p className="text-slate-500 dark:text-slate-400">
+          <p className="text-sm lg:text-base text-slate-500 dark:text-slate-400">
             {document.description}
           </p>
         </div>

@@ -20,13 +20,13 @@ export const FaqAccordion = ({ faq }: Props) => {
     <div className="flex flex-col gap-3">
       <div
         key={faq.id}
-        className="bg-white dark:bg-slate-950/50 rounded-3xl overflow-hidden flex flex-col my-1"
+        className="bg-white dark:bg-slate-950/50 rounded-2xl lg:rounded-3xl overflow-hidden flex flex-col my-1"
       >
         <button
           onClick={() => toggle(faq.id)}
-          className="w-full flex items-center justify-between gap-3 p-6 text-left cursor-pointer"
+          className="w-full flex items-center justify-between gap-3 p-4 lg:p-6 text-left cursor-pointer"
         >
-          <span className="font-semibold dark:text-white">{faq.question}</span>
+          <span className="font-semibold text-sm lg:text-base dark:text-white">{faq.question}</span>
           <motion.div
             animate={{ rotate: isOpen ? 45 : 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}

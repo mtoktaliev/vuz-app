@@ -22,12 +22,12 @@ export const LandingFooter: React.FC = () => {
 
   return (
     <div ref={headerRef} className="bg-slate-200 dark:bg-slate-950 anim-fade-up">
-      <div className="container mx-auto px-6 pt-28 pb-8 grid grid-cols-12 gap-6">
-        <div className="col-span-3 flex flex-col gap-3">
+      <div className="container mx-auto px-4 lg:px-6 pt-12 lg:pt-28 pb-4 lg:pb-8 grid grid-cols-12 gap-6">
+        <div className="col-span-12 lg:col-span-3 px-4 lg:px-0 flex flex-col gap-3">
           <div className="w-20">
             <MNVOIIcon themeColor={theme === "dark" ? "#ffffff" : "#264896"} />
           </div>
-          <p className="text-sm dark:text-white">
+          <p className="text-xs lg:text-sm dark:text-white">
             Министерство науки, высшего образования и инноваций Кыргызской
             Республики
           </p>
@@ -38,9 +38,9 @@ export const LandingFooter: React.FC = () => {
           </div>
         </div>
 
-        <div className="col-span-3 flex flex-col gap-4">
+        <div className="col-span-12 lg:col-span-3 flex flex-col gap-3 lg:gap-4">
           <p className="font-bold text-sm px-4 dark:text-white">Навигация</p>
-          <nav className="flex flex-col gap-3">
+          <nav className="flex flex-col lg:gap-3">
             {navLinks.map((link) => {
               return (
                 <Link key={link.key} to={link.key}>
@@ -53,9 +53,9 @@ export const LandingFooter: React.FC = () => {
           </nav>
         </div>
 
-        <div className="col-span-3 flex flex-col gap-4">
+        <div className="col-span-12 lg:col-span-3 flex flex-col gap-3 lg:gap-4">
           <p className="font-bold text-sm px-4 dark:text-white">Вход</p>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col lg:gap-3">
             <Link to={RoutesUrls.login}>
               <Button color="default" variant="link">
                 Кабинет МНВОИ
@@ -79,9 +79,9 @@ export const LandingFooter: React.FC = () => {
           </div>
         </div>
 
-        <div className="col-span-3 flex flex-col gap-4">
+        <div className="col-span-12 lg:col-span-3 flex flex-col gap-3 lg:gap-4">
           <p className="font-bold text-sm px-4 dark:text-white">Контакты</p>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col lg:gap-3">
             <Link to={RoutesUrls.login}>
               <Button color="default" variant="link">
                 2020.edu.gov.kg@gmail.com
@@ -94,7 +94,7 @@ export const LandingFooter: React.FC = () => {
             </Link>
           </div>
           <p className="font-bold text-sm px-4 dark:text-white">Режим работы</p>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col lg:gap-3">
             <Link to={RoutesUrls.login}>
               <Button color="default" variant="link">
                 Понедельник - Пятница

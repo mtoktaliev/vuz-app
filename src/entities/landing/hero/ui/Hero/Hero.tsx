@@ -14,10 +14,10 @@ export const Hero: React.FC = () => {
 
   return (
     <div className="relative">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-12 py-28">
-          <div className="col-span-8 col-start-3 text-center flex flex-col gap-12">
-            <div className="bg-white py-1 px-4 w-fit mx-auto rounded-full dark:bg-slate-950/50">
+      <div className="container mx-auto px-4 lg:px-6">
+        <div className="grid grid-cols-12 lg:py-28">
+          <div className="col-span-10 lg:col-span-8 col-start-2 lg:col-start-3 text-center flex flex-col gap-8 lg:gap-12">
+            <div className="bg-white text-sm lg:text-base py-1 px-4 w-fit mx-auto rounded-full dark:bg-slate-950/50">
               <ShinyText
                 text="⚡2020.edu.gov.kg/vuz v2.0"
                 speed={2}
@@ -31,19 +31,40 @@ export const Hero: React.FC = () => {
                 disabled={false}
               />
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-2 lg:gap-6">
               <BlurText
                 text={t("landing:heroTitle")}
                 delay={200}
                 animateBy="words"
                 direction="top"
-                className="text-5xl font-semibold leading-tight dark:text-white text-center flex justify-center items-center"
+                className="text-3xl lg:text-5xl font-semibold leading-tight dark:text-white text-center flex justify-center items-center"
               />
-              <p className="text-2xl text-slate-500 dark:text-slate-400">
+              <p className="lg:text-2xl text-slate-500 dark:text-slate-400">
                 {t("landing:heroDescription")}
               </p>
             </div>
-            <div className="flex justify-center gap-3">
+            <div className="flex justify-center gap-3 lg:hidden">
+              <Link to={RoutesUrls.login}>
+                <Button
+                  type="primary"
+                  shape="round"
+                  style={{ padding: "20px 20px" }}
+                >
+                  {t("cm:buttons:logInAccount")}
+                </Button>
+              </Link>
+              <Link to={RoutesUrls.universities}>
+                <Button
+                  type="primary"
+                  ghost
+                  shape="round"
+                  style={{ padding: "20px 20px" }}
+                >
+                  {t("cm:buttons:universitiesList")}
+                </Button>
+              </Link>
+            </div>
+            <div className="hidden lg:flex justify-center gap-3">
               <Link to={RoutesUrls.login}>
                 <Button
                   type="primary"
@@ -76,7 +97,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="bg-linear-to-t from-white to-white/0 h-1/3 absolute bottom-0 w-full dark:bg-linear-to-t dark:from-slate-950/50 dark:to-slate-950/0"></div>
+      <div className="bg-linear-to-t from-white to-white/0 h-1/5 lg:h-1/3 absolute bottom-0 w-full dark:bg-linear-to-t dark:from-slate-950/50 dark:to-slate-950/0"></div>
     </div>
   );
 };

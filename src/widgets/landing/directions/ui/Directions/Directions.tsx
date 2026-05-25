@@ -50,18 +50,18 @@ export const Directions = () => {
   };
 
   return (
-    <div className="flex flex-col gap-12 py-28">
+    <div className="flex flex-col gap-6 lg:gap-12 py-12 lg:py-28">
       <div
         ref={headerRef}
-        className="container mx-auto px-6 flex gap-6 justify-between items-center anim-fade-up"
+        className="container mx-auto px-4 lg:px-6 flex gap-4 lg:gap-6 justify-between items-center anim-fade-up"
       >
-        <h2 className="text-4xl font-semibold dark:text-white">
+        <h2 className="text-2xl lg:text-4xl font-semibold dark:text-white">
           {t("landing:popularDirections")}
         </h2>
         <Link to={RoutesUrls.directionQuiz}>
           <Button
             type="link"
-            size="large"
+            size="small"
             icon={<AltArrowRight />}
             iconPlacement="end"
           >
@@ -81,6 +81,7 @@ export const Directions = () => {
           }}
           breakpoints={{
             0: {
+              slidesPerView: 1.2,
               spaceBetween: 12,
               slidesOffsetBefore: getOffset(),
               slidesOffsetAfter: 16,
@@ -121,7 +122,7 @@ export const Directions = () => {
               />
             </SwiperSlide>
           ))}
-          <div className="container mx-auto flex justify-end gap-3 py-6 px-12">
+          <div className="container mx-auto flex justify-end gap-2 lg:gap-3 py-4 lg:py-6 px-4 lg:px-12">
             <Button
               ref={navigationPrevRef}
               icon={<AltArrowLeft />}

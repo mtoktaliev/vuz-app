@@ -21,7 +21,7 @@ export const DirectionCardView = ({
     <div
       style={style}
       className={`
-        bg-white dark:bg-slate-950/50 p-6 rounded-3xl flex flex-col gap-6
+        bg-white dark:bg-slate-950/50 p-6 lg:p-10 rounded-2xl lg:rounded-3xl flex flex-col gap-4 lg:gap-6
         ${
           bordered
             ? isPrimary
@@ -44,10 +44,10 @@ export const DirectionCardView = ({
       </div>
 
       <div className="flex flex-col gap-1">
-        <h3 className="font-semibold text-lg dark:text-white">
+        <h3 className="font-semibold lg:text-lg dark:text-white">
           {direction.name}
         </h3>
-        <p className="text-slate-500 dark:text-slate-400">
+        <p className="text-sm lg:text-base text-slate-500 dark:text-slate-400">
           {direction.description}
         </p>
       </div>

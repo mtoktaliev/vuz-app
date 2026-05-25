@@ -15,22 +15,20 @@ export const Faqs = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-12 container mx-auto px-6 py-28">
-        <div className="grid grid-cols-12 gap-12">
+      <div className="flex flex-col gap-6 lg:gap-12 container mx-auto px-4 lg:px-6 py-12 lg:py-28">
+        <div className="grid grid-cols-12 gap-6 lg:gap-12">
           <div
             ref={headerRef}
-            className="col-span-8 col-start-3 text-center flex flex-col gap-6 anim-fade-up"
+            className="col-span-10 lg:col-span-8 col-start-2 lg:col-start-3 text-center flex flex-col gap-2 lg:gap-6 anim-fade-up"
           >
-            <h2 className="text-5xl font-semibold dark:text-white text-center flex justify-center items-center">
+            <h2 className="text-3xl lg:text-5xl font-semibold dark:text-white text-center flex justify-center items-center">
               Вопросы-Ответы
             </h2>
-            <p className="text-xl text-slate-500 dark:text-slate-400">
-              Самые частые вопросы и ответы от абитуриентов. Если у вас остались
-              вопросы, то вы всегда можете связаться с нами через форму обратной
-              связи или позвонить по телефону.
+            <p className="lg:text-xl text-slate-500 dark:text-slate-400">
+              Самые частые вопросы и ответы от абитуриентов
             </p>
           </div>
-          <div className="col-span-8 col-start-3">
+          <div className="col-span-12 lg:col-span-8 lg:col-start-3">
             <div ref={itemRef}>
               {FAQ.map((faq, index) => (
                 <div
@@ -49,15 +47,27 @@ export const Faqs = () => {
           to={RoutesUrls.faq}
           className="flex justify-center anim-fade-up"
         >
-          <Button
-            type="primary"
-            size="large"
-            ghost
-            shape="round"
-            style={{ padding: "24px 30px" }}
-          >
-            Все вопросы-ответы
-          </Button>
+          <div className="lg:hidden">
+            <Button
+              type="primary"
+              ghost
+              shape="round"
+              style={{ padding: "20px 20px" }}
+            >
+              Все вопросы-ответы
+            </Button>
+          </div>
+          <div className="hidden lg:block">
+            <Button
+              type="primary"
+              size="large"
+              ghost
+              shape="round"
+              style={{ padding: "24px 30px" }}
+            >
+              Все вопросы-ответы
+            </Button>
+          </div>
         </Link>
       </div>
     </>
