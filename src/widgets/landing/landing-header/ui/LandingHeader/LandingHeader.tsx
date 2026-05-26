@@ -8,29 +8,32 @@ import { RoutesUrls } from "~shared/lib/router/types";
 import { Button } from "antd";
 import { Header } from "~shared/ui/layout";
 import { AnimatedThemeToggler } from "~features/shared/animated-theme-toggler/AnimatedThemeToggler";
-import { lockBodyScroll, unlockBodyScroll } from "~shared/lib/use-lockbodyscroll/Uselockbodyscroll";
+import {
+  lockBodyScroll,
+  unlockBodyScroll,
+} from "~shared/lib/use-lockbodyscroll/Uselockbodyscroll";
 
 export const LandingHeader: React.FC = () => {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
-const closeMenu = () => {
-  setMenuOpen(false);
-  unlockBodyScroll();
-};
+  const closeMenu = () => {
+    setMenuOpen(false);
+    unlockBodyScroll();
+  };
 
-const toggleMenu = () => {
-  if (menuOpen) {
-    closeMenu();
-  } else {
-    setMenuOpen(true);
-    lockBodyScroll();
-  }
-};
+  const toggleMenu = () => {
+    if (menuOpen) {
+      closeMenu();
+    } else {
+      setMenuOpen(true);
+      lockBodyScroll();
+    }
+  };
 
-useEffect(() => {
-  return () => unlockBodyScroll();
-}, []);
+  useEffect(() => {
+    return () => unlockBodyScroll();
+  }, []);
 
   const navLinks = [
     { key: RoutesUrls.home, label: t("routes.home") },
@@ -38,6 +41,14 @@ useEffect(() => {
     { key: RoutesUrls.openData, label: t("routes.openData") },
     { key: RoutesUrls.faq, label: t("routes.faq") },
     { key: RoutesUrls.registration, label: t("routes.registration") },
+  ];
+  const navLinksMobile = [
+    { key: RoutesUrls.home, label: t("routes.home") },
+    { key: RoutesUrls.universities, label: t("routes.universities") },
+    { key: RoutesUrls.openData, label: t("routes.openData") },
+    { key: RoutesUrls.faq, label: t("routes.faq") },
+    { key: RoutesUrls.registration, label: t("routes.registration") },
+    { key: RoutesUrls.login, label: t("buttons.login") },
   ];
 
   return (
@@ -92,7 +103,7 @@ useEffect(() => {
 
             {/* Кнопка бургера — только на мобилке и планшете */}
             <button
-              className="lg:hidden flex flex-col items-center justify-center w-10 h-10 gap-1.25 rounded-md transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none"
+              className="lg:hidden flex flex-col items-center justify-center w-10 h-10 gap-1.25 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none"
               onClick={toggleMenu}
               aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
               aria-expanded={menuOpen}
@@ -125,22 +136,16 @@ useEffect(() => {
             : "opacity-0 pointer-events-none"
         }`}
       >
-        {/* Затемнение фона */}
-        <div
-          className="absolute  bg-black backdrop-blur-sm"
-          onClick={closeMenu}
-        />
-
         {/* Само меню — выезжает сверху */}
         <div
-        onClick={closeMenu}
+          onClick={closeMenu}
           className={`absolute top-0 left-0 right-0 bg-white/50 dark:bg-slate-950/95 backdrop-blur-3xl transition-transform duration-300 ease-out h-screen ${
             menuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
           {/* Навигационные ссылки */}
-          <nav className="flex flex-col px-3 py-6">
-            {navLinks.map((link, i) => (
+          <nav className="flex flex-col px-3 py-6 gap-6">
+            {navLinksMobile.map((link, i) => (
               <Link
                 key={link.key}
                 to={link.key}
@@ -158,38 +163,13 @@ useEffect(() => {
                   color="default"
                   variant="link"
                   size="large"
-                  className="w-full justify-start! text-xl! py-3 h-auto"
+                  className="w-full justify-start! text-2xl!"
                 >
                   {link.label}
                 </Button>
               </Link>
             ))}
           </nav>
-
-          {/* Кнопка входа */}
-          <div
-            className={`px-3 transition-all duration-300 ${
-              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-            }`}
-            style={{
-              transitionDelay: menuOpen
-                ? `${navLinks.length * 50 + 150}ms`
-                : "0ms",
-            }}
-          >
-            <Link to={RoutesUrls.login} className="block mt-2">
-              <Button
-                color="primary"
-                variant="solid"
-                size="large"
-                icon={<Login3 />}
-                className="w-full"
-                onClick={closeMenu}
-              >
-                {t("cm:buttons.login")}
-              </Button>
-            </Link>
-          </div>
         </div>
       </div>
     </>

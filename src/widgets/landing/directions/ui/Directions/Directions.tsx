@@ -81,7 +81,7 @@ export const Directions = () => {
           }}
           breakpoints={{
             0: {
-              slidesPerView: 1.2,
+              slidesPerView: 1.1,
               spaceBetween: 12,
               slidesOffsetBefore: getOffset(),
               slidesOffsetAfter: 16,

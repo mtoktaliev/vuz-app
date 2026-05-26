@@ -55,7 +55,7 @@ export const FaqAccordion = ({ faq }: Props) => {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               style={{ overflow: "hidden" }}
             >
-              <p className="px-6 pb-6 text-slate-500 dark:text-slate-400 leading-relaxed">
+              <p className="px-4 lg:px-6 pb-4 lg:pb-6 text-sm lg:text-base text-slate-500 dark:text-slate-400 leading-relaxed">
                 {faq.answer}
               </p>
             </motion.div>
