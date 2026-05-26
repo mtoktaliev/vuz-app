@@ -2,8 +2,8 @@
   "appName": "Поступление в вузы",
   "mainSiteName": "Абитуриент",
   "buttons": {
-    "ru": "Рус",
-    "ky": "Кыр",
+    "ru": "Русский",
+    "ky": "Кыргызча",
     "logInAccount": "Войти в кабинет",
     "universitiesList": "Список вузов",
     "login": "Войти",

@@ -34,7 +34,7 @@ export const SetLocaleView: React.FC = () => {
       >
         <a href="/" onClick={(e) => e.preventDefault()}>
           <Space>
-            <Button icon={<Global />} shape="circle" type="text" />
+            <Button size="large" icon={<Global />} shape="circle" type="text" />
           </Space>
         </a>
       </Dropdown>

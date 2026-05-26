@@ -2,8 +2,8 @@
   "appName": "ЖОЖго тапшыруу",
   "mainSiteName": "Бүтүрүүчү",
   "buttons": {
-    "ru": "Рус",
-    "ky": "Кыр",
+    "ru": "Русский",
+    "ky": "Кыргызча",
     "logInAccount": "Кабинетке кирүү",
     "universitiesList": "ЖОЖдордун тизмеси",
     "login": "Кирүү",

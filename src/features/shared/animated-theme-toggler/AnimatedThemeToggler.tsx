@@ -236,6 +236,7 @@ export const AnimatedThemeToggler = ({
       icon={ isDark ? <SunOutlined /> : <MoonStars />}
       shape="circle"
       type="text"
+      size="large"
       onClick={toggleTheme}
       ref={buttonRef}
     />

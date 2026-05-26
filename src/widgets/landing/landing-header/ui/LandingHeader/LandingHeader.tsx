@@ -92,24 +92,24 @@ useEffect(() => {
 
             {/* Кнопка бургера — только на мобилке и планшете */}
             <button
-              className="lg:hidden flex flex-col items-center justify-center w-8 h-8 gap-1.25 rounded-md transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none"
+              className="lg:hidden flex flex-col items-center justify-center w-10 h-10 gap-1.25 rounded-md transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none"
               onClick={toggleMenu}
               aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
               aria-expanded={menuOpen}
             >
               <span
-                className={`block h-0.5 w-5 bg-slate-700 dark:bg-slate-200 rounded-full transition-all duration-300 origin-center ${
-                  menuOpen ? "translate-y-1.75 rotate-45" : ""
+                className={`block h-px w-4 bg-slate-700 dark:bg-slate-200 rounded-full transition-all duration-300 origin-center ${
+                  menuOpen ? "translate-y-1.5 rotate-45" : ""
                 }`}
               />
               <span
-                className={`block h-0.5 w-5 bg-slate-700 dark:bg-slate-200 rounded-full transition-all duration-300 ${
+                className={`block h-px w-4 bg-slate-700 dark:bg-slate-200 rounded-full transition-all duration-300 ${
                   menuOpen ? "opacity-0 scale-x-0" : ""
                 }`}
               />
               <span
-                className={`block h-0.5 w-5 bg-slate-700 dark:bg-slate-200 rounded-full transition-all duration-300 origin-center ${
-                  menuOpen ? "-translate-y-1.75 -rotate-45" : ""
+                className={`block h-px w-4 bg-slate-700 dark:bg-slate-200 rounded-full transition-all duration-300 origin-center ${
+                  menuOpen ? "-translate-y-1.5 -rotate-45" : ""
                 }`}
               />
             </button>
