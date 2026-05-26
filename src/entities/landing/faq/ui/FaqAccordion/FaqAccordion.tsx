@@ -20,7 +20,7 @@ export const FaqAccordion = ({ faq }: Props) => {
     <div className="flex flex-col gap-3">
       <div
         key={faq.id}
-        className="bg-white dark:bg-slate-950/50 rounded-2xl lg:rounded-3xl overflow-hidden flex flex-col my-1"
+        className="bg-white dark:bg-slate-900 rounded-2xl lg:rounded-3xl overflow-hidden flex flex-col my-1"
       >
         <button
           onClick={() => toggle(faq.id)}

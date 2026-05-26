@@ -14,7 +14,7 @@ export const Faqs = () => {
   );
 
   return (
-    <>
+    <div className="dark:bg-slate-950/50">
       <div className="flex flex-col gap-6 lg:gap-12 container mx-auto px-4 lg:px-6 py-12 lg:py-28">
         <div className="grid grid-cols-12 gap-6 lg:gap-12">
           <div
@@ -70,6 +70,6 @@ export const Faqs = () => {
           </div>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
