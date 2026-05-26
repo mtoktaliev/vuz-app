@@ -21,7 +21,7 @@ export const Benefits = () => {
         className="col-span-12 lg:col-span-6 bg-slate-100 dark:bg-slate-900 p-12 lg:px-12 lg:py-16 grid grid-cols-6 lg:rounded-3xl flex-col lg:gap-12 anim-fade-up"
       >
         <div className="flex flex-col col-span-6 lg:col-span-4 gap-6 lg:gap-6 lg:col-start-2 text-lg lg:text-2xl font-semibold text-center dark:text-white">
-          <h2 className="">Перечень льготников и необходимых документов</h2>
+          <h2 className="text-shadow-md">Перечень льготников и необходимых документов</h2>
           <div className="grid grid-cols-6">
             <div className="col-span-6 col-start-1">
               <div className="flex justify-center gap-3 lg:hidden">
@@ -60,7 +60,7 @@ export const Benefits = () => {
         className="col-span-12 lg:col-span-6 bg-stone-100 dark:bg-slate-900 p-12 lg:px-12 lg:py-16 grid grid-cols-6 lg:rounded-3xl flex-col lg:gap-12 anim-fade-up"
       >
         <div className="flex flex-col col-span-6 lg:col-span-4 gap-6 lg:gap-6 lg:col-start-2 text-lg lg:text-2xl font-semibold text-center dark:text-white">
-          <h2 className="">Участие в конкурсе после срочной военной службы</h2>
+          <h2 className="text-shadow-md">Участие в конкурсе после срочной военной службы</h2>
           <div className="grid grid-cols-6">
             <div className="col-span-6">
               <div className="flex justify-center gap-3 lg:hidden">

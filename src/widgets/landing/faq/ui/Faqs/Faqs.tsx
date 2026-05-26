@@ -21,7 +21,7 @@ export const Faqs = () => {
             ref={headerRef}
             className="col-span-10 lg:col-span-8 col-start-2 lg:col-start-3 text-center flex flex-col gap-2 lg:gap-6 anim-fade-up"
           >
-            <h2 className="text-3xl lg:text-5xl font-semibold dark:text-white text-center flex justify-center items-center">
+            <h2 className="text-3xl lg:text-5xl font-semibold dark:text-white text-center flex justify-center items-center text-shadow-md">
               Вопросы-Ответы
             </h2>
             <p className="lg:text-xl text-slate-500 dark:text-slate-400">

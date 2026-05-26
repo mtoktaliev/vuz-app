@@ -55,7 +55,7 @@ export const Directions = () => {
         ref={headerRef}
         className="container mx-auto px-4 lg:px-6 flex gap-4 lg:gap-6 justify-between items-center anim-fade-up"
       >
-        <h2 className="text-2xl lg:text-4xl font-semibold dark:text-white">
+        <h2 className="text-2xl lg:text-4xl font-semibold dark:text-white text-shadow-md">
           {t("landing:popularDirections")}
         </h2>
         <Link to={RoutesUrls.directionQuiz}>

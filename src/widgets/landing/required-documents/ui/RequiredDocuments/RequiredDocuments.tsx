@@ -14,7 +14,7 @@ export const RequiredDocuments: React.FC = () => {
     <div className="flex flex-col gap-12 container mx-auto px-4 lg:px-6 py-12 lg:py-28">
       <div className="grid grid-cols-12 gap-6 lg:gap-12">
         <div ref={headerRef} className="col-span-10 col-start-2 lg:col-span-8 lg:col-start-3 text-center flex flex-col gap-2 lg:gap-6 anim-fade-up">
-          <h2 className="text-3xl lg:text-5xl font-semibold dark:text-white text-center flex justify-center items-center">
+          <h2 className="text-3xl lg:text-5xl font-semibold dark:text-white text-center flex justify-center items-center text-shadow-md">
             Документы необходимые для поступления
           </h2>
           <p className="lg:text-xl text-slate-500 dark:text-slate-400">

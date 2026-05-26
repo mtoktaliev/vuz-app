@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
                 delay={200}
                 animateBy="words"
                 direction="top"
-                className="text-3xl lg:text-5xl font-semibold leading-tight dark:text-white text-center flex justify-center items-center"
+                className="text-3xl lg:text-5xl font-semibold leading-tight dark:text-white text-center flex justify-center items-center text-shadow-md"
               />
               <p className="lg:text-2xl text-slate-500 dark:text-slate-400">
                 {t("landing:heroDescription")}
