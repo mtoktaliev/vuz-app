@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Login3 } from "@solar-icons/react-perf/Outline";
 import { SquareAcademicCap } from "@solar-icons/react-perf/Bold";
 
@@ -12,12 +12,9 @@ import { AnimatedThemeToggler } from "~features/shared/animated-theme-toggler/An
 
 export const LandingHeader: React.FC = () => {
   const { t } = useTranslation();
-  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
+  const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -41,12 +38,20 @@ export const LandingHeader: React.FC = () => {
           <div className="col-span-6 lg:col-span-3">
             <Link to={RoutesUrls.home}>
               <div className="hidden lg:block">
-                <Button icon={<SquareAcademicCap />} color="default" variant="link">
+                <Button
+                  icon={<SquareAcademicCap />}
+                  color="default"
+                  variant="link"
+                >
                   Абитуриент v2.0
                 </Button>
               </div>
               <div className="lg:hidden">
-                <Button icon={<SquareAcademicCap />} color="default" variant="link"/>
+                <Button
+                  icon={<SquareAcademicCap />}
+                  color="default"
+                  variant="link"
+                />
               </div>
             </Link>
           </div>
@@ -78,14 +83,14 @@ export const LandingHeader: React.FC = () => {
 
             {/* Кнопка бургера — только на мобилке и планшете */}
             <button
-              className="lg:hidden flex flex-col items-center justify-center w-8 h-8 gap-[5px] rounded-md transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none"
+              className="lg:hidden flex flex-col items-center justify-center w-8 h-8 gap-1.25 rounded-md transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none"
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
               aria-expanded={menuOpen}
             >
               <span
                 className={`block h-0.5 w-5 bg-slate-700 dark:bg-slate-200 rounded-full transition-all duration-300 origin-center ${
-                  menuOpen ? "translate-y-[7px] rotate-45" : ""
+                  menuOpen ? "translate-y-1.75 rotate-45" : ""
                 }`}
               />
               <span
@@ -95,7 +100,7 @@ export const LandingHeader: React.FC = () => {
               />
               <span
                 className={`block h-0.5 w-5 bg-slate-700 dark:bg-slate-200 rounded-full transition-all duration-300 origin-center ${
-                  menuOpen ? "-translate-y-[7px] -rotate-45" : ""
+                  menuOpen ? "-translate-y-1.75 -rotate-45" : ""
                 }`}
               />
             </button>
@@ -105,37 +110,46 @@ export const LandingHeader: React.FC = () => {
 
       {/* Мобильное меню — оверлей */}
       <div
-        className={`lg:hidden fixed top-12 inset-0 z-10 transition-all duration-300 ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`lg:hidden fixed top-12 inset-0 transition-all duration-300 ${
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
       >
         {/* Затемнение фона */}
         <div
-          className="absolute inset-0 bg-black/20 backdrop-blur-sm"
-          onClick={() => setMenuOpen(false)}
+          className="absolute  bg-black backdrop-blur-sm"
+          onClick={closeMenu}
         />
 
         {/* Само меню — выезжает сверху */}
         <div
-          className={`absolute top-0 left-0 right-0 bg-white/90 dark:bg-slate-950/95 backdrop-blur border-b border-slate-200/70 dark:border-slate-800/70 shadow-xl transition-transform duration-300 ease-out ${
+        onClick={closeMenu}
+          className={`absolute top-0 left-0 right-0 bg-white/50 dark:bg-slate-950/95 backdrop-blur-3xl transition-transform duration-300 ease-out h-screen ${
             menuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
           {/* Навигационные ссылки */}
-          <nav className="flex flex-col px-3 py-2">
+          <nav className="flex flex-col px-3 py-6">
             {navLinks.map((link, i) => (
               <Link
                 key={link.key}
                 to={link.key}
+                onClick={closeMenu}
                 className={`transition-all duration-300 ${
-                  menuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+                  menuOpen
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-4"
                 }`}
-                style={{ transitionDelay: menuOpen ? `${i * 50 + 100}ms` : "0ms" }}
+                style={{
+                  transitionDelay: menuOpen ? `${i * 50 + 100}ms` : "0ms",
+                }}
               >
                 <Button
                   color="default"
                   variant="link"
-                  className="w-full !justify-start !text-base py-3 h-auto"
+                  size="large"
+                  className="w-full justify-start! text-xl! py-3 h-auto"
                 >
                   {link.label}
                 </Button>
@@ -145,17 +159,23 @@ export const LandingHeader: React.FC = () => {
 
           {/* Кнопка входа */}
           <div
-            className={`px-3 pb-4 pt-1 border-t border-slate-100 dark:border-slate-800 transition-all duration-300 ${
+            className={`px-3 transition-all duration-300 ${
               menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
             }`}
-            style={{ transitionDelay: menuOpen ? `${navLinks.length * 50 + 150}ms` : "0ms" }}
+            style={{
+              transitionDelay: menuOpen
+                ? `${navLinks.length * 50 + 150}ms`
+                : "0ms",
+            }}
           >
             <Link to={RoutesUrls.login} className="block mt-2">
               <Button
                 color="primary"
                 variant="solid"
+                size="large"
                 icon={<Login3 />}
                 className="w-full"
+                onClick={closeMenu}
               >
                 {t("cm:buttons.login")}
               </Button>

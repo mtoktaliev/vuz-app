@@ -6,12 +6,14 @@ import "./styles/index.css";
 import { Router } from "~pages/Router";
 import { withProviders } from "./providers";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import { ScrollToTop } from "./providers/Scrolltotop";
 
 const App: React.FC = () => {
   return (
     <>
       <ThemeProvider>
         <ConfigProvider locale={ruRU} theme={antdTheme}>
+          <ScrollToTop />
           <Router />
         </ConfigProvider>
       </ThemeProvider>
