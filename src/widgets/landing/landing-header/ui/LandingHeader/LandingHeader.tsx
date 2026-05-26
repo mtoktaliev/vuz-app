@@ -3,25 +3,34 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Login3 } from "@solar-icons/react-perf/Outline";
 import { SquareAcademicCap } from "@solar-icons/react-perf/Bold";
-
 import { SetLocaleView } from "~features/shared/locale";
 import { RoutesUrls } from "~shared/lib/router/types";
 import { Button } from "antd";
 import { Header } from "~shared/ui/layout";
 import { AnimatedThemeToggler } from "~features/shared/animated-theme-toggler/AnimatedThemeToggler";
+import { lockBodyScroll, unlockBodyScroll } from "~shared/lib/use-lockbodyscroll/Uselockbodyscroll";
 
 export const LandingHeader: React.FC = () => {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => setMenuOpen(false);
+const closeMenu = () => {
+  setMenuOpen(false);
+  unlockBodyScroll();
+};
 
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [menuOpen]);
+const toggleMenu = () => {
+  if (menuOpen) {
+    closeMenu();
+  } else {
+    setMenuOpen(true);
+    lockBodyScroll();
+  }
+};
+
+useEffect(() => {
+  return () => unlockBodyScroll();
+}, []);
 
   const navLinks = [
     { key: RoutesUrls.home, label: t("routes.home") },
@@ -84,7 +93,7 @@ export const LandingHeader: React.FC = () => {
             {/* Кнопка бургера — только на мобилке и планшете */}
             <button
               className="lg:hidden flex flex-col items-center justify-center w-8 h-8 gap-1.25 rounded-md transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none"
-              onClick={() => setMenuOpen((prev) => !prev)}
+              onClick={toggleMenu}
               aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
               aria-expanded={menuOpen}
             >

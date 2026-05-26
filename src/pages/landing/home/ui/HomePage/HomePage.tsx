@@ -2,6 +2,7 @@ import {
   HeroSection,
   AdmissionSteps,
   Directions,
+  Advantages,
   Benefits,
   Faqs,
   LegalBasis,
@@ -12,6 +13,7 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <HeroSection />
+      <Advantages />
       <AdmissionSteps />
       <RequiredDocuments />
       <Directions />
