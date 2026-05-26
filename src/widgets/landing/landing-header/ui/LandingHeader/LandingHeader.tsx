@@ -68,6 +68,7 @@ export const LandingHeader: React.FC = () => {
               </div>
               <div className="lg:hidden">
                 <Button
+                  size="large"
                   icon={<SquareAcademicCap />}
                   color="default"
                   variant="link"
