@@ -50,24 +50,19 @@ export const Directions = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6 lg:gap-12 py-12 lg:py-28">
+    <div className="flex flex-col gap-6 lg:gap-12 py-12 lg:py-28 dark:bg-slate-950">
       <div
         ref={headerRef}
-        className="container mx-auto px-4 lg:px-6 flex gap-4 lg:gap-6 justify-between items-center anim-fade-up"
+        className="container mx-auto px-4 lg:px-6 grid grid-cols-12 anim-fade-up"
       >
-        <h2 className="text-2xl lg:text-4xl font-semibold dark:text-white text-shadow-md">
-          {t("landing:popularDirections")}
-        </h2>
-        <Link to={RoutesUrls.directionQuiz}>
-          <Button
-            type="link"
-            size="small"
-            icon={<AltArrowRight />}
-            iconPlacement="end"
-          >
-            {t("buttons.helpChoose")}
-          </Button>
-        </Link>
+        <div className="col-span-10 col-start-2 lg:col-span-8 lg:col-start-3 text-center flex flex-col gap-2 lg:gap-6">
+          <h2 className="text-3xl lg:text-5xl font-semibold dark:text-white text-center flex justify-center items-center text-shadow-md">
+            {t("landing:popularDirectionsTitle")}
+          </h2>
+          <p className="lg:text-2xl text-slate-500 dark:text-slate-400">
+            {t("landing:popularDirectionsDescription")}
+          </p>
+        </div>
       </div>
       <div className="anim-fade-up" ref={sliderRef}>
         <Swiper
@@ -122,19 +117,31 @@ export const Directions = () => {
               />
             </SwiperSlide>
           ))}
-          <div className="container mx-auto flex justify-end gap-2 lg:gap-3 py-4 lg:py-6 px-4 lg:px-12">
-            <Button
-              ref={navigationPrevRef}
-              icon={<AltArrowLeft />}
-              shape="circle"
-              size="large"
-            />
-            <Button
-              ref={navigationNextRef}
-              icon={<AltArrowRight />}
-              shape="circle"
-              size="large"
-            />
+          <div className="container mx-auto flex items-center justify-between gap-2 lg:gap-3 py-4 lg:py-6 px-4 lg:px-12">
+            <Link to={RoutesUrls.directionQuiz}>
+              <Button
+                type="link"
+                size="small"
+                icon={<AltArrowRight />}
+                iconPlacement="end"
+              >
+                {t("buttons.helpChoose")}
+              </Button>
+            </Link>
+            <div className="flex gap-2">
+              <Button
+                ref={navigationPrevRef}
+                icon={<AltArrowLeft />}
+                shape="circle"
+                size="large"
+              />
+              <Button
+                ref={navigationNextRef}
+                icon={<AltArrowRight />}
+                shape="circle"
+                size="large"
+              />
+            </div>
           </div>
         </Swiper>
       </div>

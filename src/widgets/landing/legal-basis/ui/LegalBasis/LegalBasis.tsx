@@ -55,10 +55,10 @@ export const LegalBasis = () => {
             className="col-span-12 lg:col-span-8 lg:col-start-3 flex flex-col gap-4 lg:gap-12 anim-fade-up"
           >
             <div className="flex flex-col gap-2 lg:gap-6 text-center">
-              <h2 className="text-3xl lg:text-4xl font-semibold dark:text-white text-shadow-md">
+              <h2 className="text-3xl lg:text-5xl font-semibold dark:text-white text-shadow-md">
                 Нормативная правовая база
               </h2>
-              <p className="lg:text-xl text-slate-500 dark:text-slate-400">
+              <p className="lg:text-2xl text-slate-500 dark:text-slate-400">
                 Документы регулирующие процесс поступления в вузы Кыргызстана
               </p>
             </div>

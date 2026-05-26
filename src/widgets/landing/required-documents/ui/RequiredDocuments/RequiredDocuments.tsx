@@ -17,7 +17,7 @@ export const RequiredDocuments: React.FC = () => {
           <h2 className="text-3xl lg:text-5xl font-semibold dark:text-white text-center flex justify-center items-center text-shadow-md">
             Документы необходимые для поступления
           </h2>
-          <p className="lg:text-xl text-slate-500 dark:text-slate-400">
+          <p className="lg:text-2xl text-slate-500 dark:text-slate-400">
             Для поступления в университет вам необходимо предоставить следующие
             документы:
           </p>

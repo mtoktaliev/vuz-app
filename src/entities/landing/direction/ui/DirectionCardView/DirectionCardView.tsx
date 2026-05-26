@@ -21,7 +21,7 @@ export const DirectionCardView = ({
     <div
       style={style}
       className={`
-        bg-white dark:bg-slate-950/50 p-6 lg:p-10 rounded-2xl lg:rounded-3xl flex flex-col gap-4 lg:gap-6
+        bg-white dark:bg-slate-900 p-6 lg:p-10 rounded-2xl lg:rounded-3xl flex flex-col gap-4 lg:gap-6
         ${
           bordered
             ? isPrimary
@@ -39,7 +39,7 @@ export const DirectionCardView = ({
         </div>
       )}
 
-      <div className="text-primary bg-purple-100 dark:bg-slate-900 p-2 rounded-lg w-fit">
+      <div className="text-primary bg-purple-100 dark:bg-slate-950/50 p-2 rounded-lg w-fit">
         {direction.icon}
       </div>
 

@@ -12,10 +12,14 @@ export const Advantages = () => {
     <div className="bg-white dark:bg-slate-950/50 py-12 lg:py-28">
       <div className="container mx-auto px-4 lg:px-6 flex flex-col gap-6 lg:gap-12">
         <div ref={headerRef} className="grid grid-cols-12 anim-fade-up">
-          <div className="col-span-10 col-start-2 lg:col-span-8 lg:col-start-3 text-center flex flex-col gap-4">
+          <div className="col-span-10 col-start-2 lg:col-span-8 lg:col-start-3 text-center flex flex-col gap-4 lg:gap-6">
             <h2 className="text-3xl lg:text-5xl font-semibold dark:text-white text-shadow-md">
-              Почему это удобно?
+              Возможности платформы
             </h2>
+            <p className="lg:text-2xl text-slate-500 dark:text-slate-400">
+              Мы объединили основные этапы поступления в удобную цифровую
+              платформу для абитуриентов и вузов
+            </p>
           </div>
         </div>
         <div ref={itemsRef} className="anim-fade-up">
