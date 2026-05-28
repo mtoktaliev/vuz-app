@@ -47,12 +47,12 @@ export const AdvantageView = ({
       }}
       className={`
         ${advantage.color}
-        rounded-2xl lg:rounded-3xl p-6 lg:p-20
+        rounded-2xl lg:rounded-3xl
         flex flex-col gap-6 items-center
         mx-auto w-full sticky h-full
       `}
     >
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-12 p-6 lg:p-20">
         <div className="col-span-12 col-start-1 lg:col-span-6 lg:col-start-4">
           <div className="flex flex-col lg:gap-12">
             <div className="flex flex-col gap-2 lg:gap-6 text-center">
@@ -63,10 +63,14 @@ export const AdvantageView = ({
                 {advantage.description}
               </p>
             </div>
-            <img src={advantage.image} alt={advantage.title} />
           </div>
         </div>
       </div>
+      <img
+        className="rounded-2xl w-full h-full object-cover"
+        src={advantage.image}
+        alt={advantage.title}
+      />
     </motion.div>
   );
 };
